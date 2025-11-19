@@ -1,0 +1,20 @@
+# Ultra-simple Dockerfile for Render
+FROM python:3.10-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Install minimal Python packages
+RUN pip install flask openai-whisper yt-dlp torch --index-url https://download.pytorch.org/whl/cpu torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+# Copy application
+COPY app_simple.py .
+
+# Create directories
+RUN mkdir -p outputs
+
+EXPOSE 5000
+
+CMD ["python", "app_simple.py"]
