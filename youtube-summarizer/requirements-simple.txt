@@ -1,0 +1,7 @@
+# Minimal requirements for simple transcription-only version
+flask>=3.0.0
+openai-whisper
+torch --index-url https://download.pytorch.org/whl/cpu
+torchaudio --index-url https://download.pytorch.org/whl/cpu
+yt-dlp
+numpy
