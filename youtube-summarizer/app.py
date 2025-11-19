@@ -2165,6 +2165,8 @@ if __name__ == '__main__':
     else:
         print("⚠️  GPU not available - using CPU mode")
     
-    print("📱 Open http://localhost:5000 in your browser")
+    # Get port from environment variable (for Render deployment)
+    port = int(os.environ.get('PORT', 5000))
+    print(f"📱 Starting server on port {port}")
     
-    app.run(debug=False, host='0.0.0.0', port=5000, use_reloader=False)
+    app.run(debug=False, host='0.0.0.0', port=port, use_reloader=False)
