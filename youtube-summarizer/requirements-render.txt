@@ -1,0 +1,27 @@
+# Core Flask web framework
+flask>=3.0.0
+
+# AI and ML libraries (CPU versions for Render)
+openai-whisper
+torch --index-url https://download.pytorch.org/whl/cpu
+torchaudio --index-url https://download.pytorch.org/whl/cpu
+ollama>=0.1.7
+
+# Video processing
+yt-dlp
+
+# PDF processing
+pdfplumber
+PyMuPDF
+Pillow
+reportlab
+
+# Utilities
+numpy
+tqdm
+more-itertools
+tiktoken
+markdown
+
+# Web server
+gunicorn
