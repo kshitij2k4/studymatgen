@@ -1,284 +1,318 @@
 #!/usr/bin/env python3
 """
-Simple Cloud-Ready YouTube Summarizer
-Optimized for deployment on cloud platforms
+Simplified YouTube Summarizer for Render deployment
+Transcription only (no AI summarization to avoid Ollama dependency)
 """
 
-import gradio as gr
+from flask import Flask, render_template, request, jsonify, send_file
 import torch
 import os
 import tempfile
 import whisper
 import yt_dlp
-import logging
 from datetime import datetime
-import subprocess
-import time
+from pathlib import Path
+import threading
+import uuid
+import logging
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-# Global variables
-whisper_model = None
-ollama_ready = False
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 
-def setup_ollama():
-    """Setup Ollama service"""
-    global ollama_ready
-    try:
-        # Start Ollama service
-        subprocess.Popen(['ollama', 'serve'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        time.sleep(10)  # Wait for service to start
-        
-        # Pull model
-        result = subprocess.run(['ollama', 'pull', 'llama3.2:1b'], 
-                              capture_output=True, text=True, timeout=300)
-        
-        if result.returncode == 0:
-            ollama_ready = True
-            return "✅ Ollama ready"
-        else:
-            return f"❌ Ollama setup failed: {result.stderr}"
-    except Exception as e:
-        return f"❌ Ollama error: {str(e)}"
+# Global variables
+processing_jobs = {}
+whisper_model = None
+
+# Configuration
+OUTPUT_FOLDER = 'outputs'
+Path(OUTPUT_FOLDER).mkdir(exist_ok=True)
+
+class ProcessingJob:
+    def __init__(self, job_id, url, model_size="base"):
+        self.job_id = job_id
+        self.url = url
+        self.model_size = model_size
+        self.status = "starting"
+        self.progress = 0
+        self.result = None
+        self.error = None
+        self.video_info = None
+        self.transcript = None
 
 def load_whisper_model(model_size="base"):
     """Load Whisper model"""
     global whisper_model
-    try:
-        if whisper_model is None:
-            device = "cuda" if torch.cuda.is_available() else "cpu"
-            whisper_model = whisper.load_model(model_size, device=device)
-        return whisper_model
-    except Exception as e:
-        logging.error(f"Error loading Whisper: {e}")
-        return None
+    if whisper_model is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(f"Loading Whisper model: {model_size} on {device}")
+        whisper_model = whisper.load_model(model_size, device=device)
+    return whisper_model
 
-def download_audio(url):
+def download_audio(url, output_path):
     """Download audio from video"""
+    ydl_opts = {
+        'format': 'bestaudio/best',
+        'outtmpl': f'{output_path}.%(ext)s',
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',
+        }],
+        'quiet': True,
+    }
+    
     try:
-        output_path = f"temp_audio_{int(time.time())}"
-        ydl_opts = {
-            'format': 'bestaudio/best',
-            'outtmpl': f'{output_path}.%(ext)s',
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '192',
-            }],
-            'quiet': True,
-        }
-        
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
             
-            # Find the downloaded file
-            for ext in ['mp3', 'm4a', 'webm', 'ogg']:
+            for ext in ['mp3', 'm4a', 'webm']:
                 audio_file = f"{output_path}.{ext}"
                 if os.path.exists(audio_file):
                     return audio_file
         return None
     except Exception as e:
-        logging.error(f"Download error: {e}")
+        logging.error(f"Error downloading audio: {e}")
         return None
 
 def get_video_info(url):
     """Get video information"""
     try:
-        ydl_opts = {'quiet': True, 'no_warnings': True}
+        ydl_opts = {'quiet': True}
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=False)
             return {
                 'title': info.get('title', 'Unknown'),
                 'duration': info.get('duration', 0),
                 'uploader': info.get('uploader', 'Unknown'),
+                'thumbnail': info.get('thumbnail', ''),
+                'view_count': info.get('view_count', 0),
             }
     except Exception as e:
-        logging.error(f"Info error: {e}")
         return None
 
-def generate_summary_simple(text, title):
-    """Generate summary using simple method if Ollama fails"""
-    try:
-        if not ollama_ready:
-            # Fallback: Simple extractive summary
-            sentences = text.split('. ')
-            # Take first few sentences and some from middle/end
-            summary_sentences = sentences[:3] + sentences[len(sentences)//2:len(sentences)//2+2] + sentences[-2:]
-            return f"**Summary of: {title}**\n\n" + '. '.join(summary_sentences)
-        
-        # Try Ollama
-        import ollama
-        prompt = f"Summarize this video '{title}' in bullet points:\n\n{text[:2000]}"
-        
-        response = ollama.generate(
-            model="llama3.2:1b",
-            prompt=prompt,
-            options={'temperature': 0.7, 'num_predict': 200}
-        )
-        
-        return f"**AI Summary: {title}**\n\n{response['response']}"
-        
-    except Exception as e:
-        # Fallback summary
-        sentences = text.split('. ')[:5]
-        return f"**Summary: {title}**\n\n• " + '\n• '.join(sentences)
-
-def process_video(url, model_size, progress=gr.Progress()):
-    """Main processing function"""
-    if not url.strip():
-        return "❌ Please enter a video URL", "", ""
+def process_video_worker(job_id):
+    """Background worker for video processing"""
+    job = processing_jobs[job_id]
     
     try:
-        # Validate URL
-        if not any(domain in url for domain in ['youtube.com', 'youtu.be', 'vimeo.com']):
-            return "❌ Please enter a valid YouTube or Vimeo URL", "", ""
-        
         # Get video info
-        progress(0.1, desc="📹 Getting video info...")
-        video_info = get_video_info(url)
-        if not video_info:
-            return "❌ Could not access video. Check URL and try again.", "", ""
+        job.status = "getting_info"
+        job.progress = 10
+        
+        job.video_info = get_video_info(job.url)
+        if not job.video_info:
+            raise Exception("Could not get video information")
         
         # Download audio
-        progress(0.3, desc="⬇️ Downloading audio...")
-        audio_file = download_audio(url)
+        job.status = "downloading"
+        job.progress = 30
+        
+        with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as tmp_file:
+            temp_path = tmp_file.name.replace('.mp3', '')
+        
+        audio_file = download_audio(job.url, temp_path)
         if not audio_file:
-            return "❌ Could not download audio. Video might be private or restricted.", "", ""
+            raise Exception("Could not download audio")
         
         # Transcribe
-        progress(0.6, desc="🎤 Transcribing (this may take a while)...")
-        model = load_whisper_model(model_size)
-        if not model:
-            return "❌ Could not load Whisper model", "", ""
+        job.status = "transcribing"
+        job.progress = 60
         
-        result = model.transcribe(audio_file, fp16=torch.cuda.is_available())
-        transcript = result['text'].strip()
+        model = load_whisper_model(job.model_size)
+        result = model.transcribe(audio_file, fp16=False)  # Use fp16=False for CPU
         
-        if not transcript:
-            return "❌ Could not transcribe audio. Video might have no speech.", "", ""
+        job.transcript = result['text']
         
-        # Generate summary
-        progress(0.9, desc="🤖 Generating summary...")
-        summary = generate_summary_simple(transcript, video_info['title'])
+        # Save results
+        job.status = "saving"
+        job.progress = 90
         
-        # Cleanup
+        # Save transcript
+        safe_title = "".join(c for c in job.video_info['title'] if c.isalnum() or c in (' ', '-', '_')).strip()[:30]
+        filename = f"{safe_title}_{job_id}_transcript.txt"
+        filepath = Path(OUTPUT_FOLDER) / filename
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(f"Title: {job.video_info['title']}\n")
+            f.write(f"Duration: {job.video_info['duration']//60}:{job.video_info['duration']%60:02d}\n")
+            f.write("-" * 50 + "\n\n")
+            f.write(job.transcript)
+        
+        job.result = {
+            'transcript': job.transcript,
+            'language': result['language'],
+            'filename': filename
+        }
+        
+        # Clean up
         try:
             os.unlink(audio_file)
         except:
             pass
         
-        progress(1.0, desc="✅ Complete!")
-        
-        # Format info
-        duration_str = f"{video_info['duration']//60}:{video_info['duration']%60:02d}" if video_info['duration'] else "Unknown"
-        info_text = f"""**📹 Video Info:**
-- **Title:** {video_info['title']}
-- **Duration:** {duration_str}
-- **Channel:** {video_info['uploader']}
-- **Processed:** {datetime.now().strftime('%Y-%m-%d %H:%M')}"""
-        
-        return info_text, transcript, summary
+        job.status = "completed"
+        job.progress = 100
         
     except Exception as e:
-        error_msg = str(e)
-        logging.error(f"Processing error: {error_msg}")
-        return f"❌ Error: {error_msg}", "", ""
+        job.status = "error"
+        job.error = str(e)
+        job.progress = 0
 
-# Setup Ollama on startup
-setup_status = setup_ollama()
-
-# Create Gradio interface
-with gr.Blocks(
-    title="StudyMatGen - YouTube Summarizer",
-    theme=gr.themes.Soft(),
-    css="""
-    .gradio-container {
-        max-width: 1200px !important;
-    }
-    .main-header {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    """
-) as demo:
-    
-    gr.HTML("""
-    <div class="main-header">
-        <h1>🎥 StudyMatGen</h1>
-        <h3>AI-Powered YouTube Summarizer</h3>
-        <p>Transform any YouTube video into study materials with AI transcription and summarization</p>
-    </div>
-    """)
-    
-    # Show setup status
-    gr.Markdown(f"**System Status:** {setup_status}")
-    
-    with gr.Row():
-        with gr.Column(scale=2):
-            url_input = gr.Textbox(
-                label="🔗 YouTube Video URL",
-                placeholder="https://www.youtube.com/watch?v=...",
-                lines=1,
-                info="Paste any YouTube or Vimeo URL here"
-            )
+@app.route('/')
+def index():
+    """Main page"""
+    return '''
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>StudyMatGen - YouTube Transcriber</title>
+        <style>
+            body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+            .container { background: #f5f5f5; padding: 20px; border-radius: 10px; }
+            input[type="url"] { width: 100%; padding: 10px; margin: 10px 0; }
+            button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+            button:hover { background: #0056b3; }
+            .result { margin-top: 20px; padding: 15px; background: white; border-radius: 5px; }
+            .progress { width: 100%; height: 20px; background: #ddd; border-radius: 10px; overflow: hidden; }
+            .progress-bar { height: 100%; background: #28a745; transition: width 0.3s; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🎥 StudyMatGen - YouTube Transcriber</h1>
+            <p>Enter a YouTube URL to get AI-powered transcription</p>
             
-            with gr.Row():
-                model_select = gr.Dropdown(
-                    choices=["tiny", "base", "small"],
-                    value="base",
-                    label="🎤 Whisper Model",
-                    info="base = good quality & speed, small = better quality"
-                )
-                process_btn = gr.Button("🚀 Process Video", variant="primary", scale=1)
+            <input type="url" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." />
+            <select id="modelSize">
+                <option value="tiny">Tiny (Fastest)</option>
+                <option value="base" selected>Base (Recommended)</option>
+                <option value="small">Small (Better Quality)</option>
+            </select>
+            <button onclick="processVideo()">Process Video</button>
+            
+            <div id="result" class="result" style="display:none;">
+                <div id="progress" class="progress">
+                    <div id="progressBar" class="progress-bar" style="width: 0%"></div>
+                </div>
+                <div id="status"></div>
+                <div id="output"></div>
+            </div>
+        </div>
         
-        with gr.Column(scale=1):
-            gr.Markdown("""
-            **💡 Tips:**
-            - Use 'base' model for best speed/quality balance
-            - Processing time depends on video length
-            - Works with YouTube, Vimeo, and more
-            - Free to use!
-            """)
-    
-    with gr.Row():
-        with gr.Column():
-            info_output = gr.Markdown(label="📋 Video Information")
-            transcript_output = gr.Textbox(
-                label="📝 Full Transcript",
-                lines=15,
-                max_lines=25,
-                show_copy_button=True
-            )
-        
-        with gr.Column():
-            summary_output = gr.Markdown(
-                label="🤖 AI Summary",
-                show_copy_button=True
-            )
-    
-    # Examples
-    gr.Examples(
-        examples=[
-            ["https://www.youtube.com/watch?v=dQw4w9WgXcQ", "base"],
-            ["https://www.youtube.com/watch?v=jNQXAC9IVRw", "base"],
-        ],
-        inputs=[url_input, model_select],
-        label="📚 Try these examples"
-    )
-    
-    process_btn.click(
-        fn=process_video,
-        inputs=[url_input, model_select],
-        outputs=[info_output, transcript_output, summary_output],
-        show_progress=True
-    )
+        <script>
+            let currentJobId = null;
+            
+            function processVideo() {
+                const url = document.getElementById('videoUrl').value;
+                const model = document.getElementById('modelSize').value;
+                
+                if (!url) {
+                    alert('Please enter a video URL');
+                    return;
+                }
+                
+                fetch('/process', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({url: url, model: model})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.job_id) {
+                        currentJobId = data.job_id;
+                        document.getElementById('result').style.display = 'block';
+                        checkStatus();
+                    } else {
+                        alert('Error: ' + data.error);
+                    }
+                });
+            }
+            
+            function checkStatus() {
+                if (!currentJobId) return;
+                
+                fetch('/status/' + currentJobId)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('progressBar').style.width = data.progress + '%';
+                    document.getElementById('status').innerHTML = 'Status: ' + data.status + ' (' + data.progress + '%)';
+                    
+                    if (data.status === 'completed') {
+                        document.getElementById('output').innerHTML = 
+                            '<h3>✅ Transcription Complete!</h3>' +
+                            '<p><strong>Title:</strong> ' + data.video_info.title + '</p>' +
+                            '<textarea style="width:100%;height:300px;">' + data.result.transcript + '</textarea>' +
+                            '<p><a href="/download/' + data.result.filename + '">Download Transcript</a></p>';
+                    } else if (data.status === 'error') {
+                        document.getElementById('output').innerHTML = '<p style="color:red;">Error: ' + data.error + '</p>';
+                    } else {
+                        setTimeout(checkStatus, 2000);
+                    }
+                });
+            }
+        </script>
+    </body>
+    </html>
+    '''
 
-# Launch configuration
-if __name__ == "__main__":
-    demo.launch(
-        server_name="0.0.0.0",
-        server_port=int(os.environ.get("PORT", 7860)),
-        share=False,
-        show_error=True
-    )
+@app.route('/process', methods=['POST'])
+def start_processing():
+    """Start video processing"""
+    data = request.json
+    url = data.get('url', '').strip()
+    model_size = data.get('model', 'base')
+    
+    if not url:
+        return jsonify({'error': 'URL is required'}), 400
+    
+    # Create job
+    job_id = str(uuid.uuid4())[:8]
+    job = ProcessingJob(job_id, url, model_size)
+    processing_jobs[job_id] = job
+    
+    # Start background worker
+    thread = threading.Thread(target=process_video_worker, args=(job_id,))
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({'job_id': job_id})
+
+@app.route('/status/<job_id>')
+def get_status(job_id):
+    """Get processing status"""
+    job = processing_jobs.get(job_id)
+    if not job:
+        return jsonify({'error': 'Job not found'}), 404
+    
+    response = {
+        'status': job.status,
+        'progress': job.progress,
+        'video_info': job.video_info,
+    }
+    
+    if job.status == 'completed' and job.result:
+        response['result'] = job.result
+    elif job.status == 'error':
+        response['error'] = job.error
+    
+    return jsonify(response)
+
+@app.route('/download/<filename>')
+def download_file(filename):
+    """Download result file"""
+    file_path = Path(OUTPUT_FOLDER) / filename
+    if file_path.exists():
+        return send_file(file_path, as_attachment=True)
+    return "File not found", 404
+
+@app.route('/health')
+def health():
+    """Health check"""
+    return jsonify({'status': 'healthy'})
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    print(f"🚀 Starting StudyMatGen on port {port}")
+    app.run(debug=False, host='0.0.0.0', port=port)

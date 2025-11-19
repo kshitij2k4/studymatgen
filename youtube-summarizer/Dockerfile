@@ -42,5 +42,5 @@ python app.py' > /app/start.sh && chmod +x /app/start.sh
 # Expose port
 EXPOSE 5000
 
-# Start the application
-CMD ["/app/start.sh"]
+# Start the simple application (transcription only)
+CMD ["python", "app_simple.py"]
