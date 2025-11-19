@@ -1,0 +1,730 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- GPU Status Banner -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="alert {% if gpu_info.available %}alert-success{% else %}alert-warning{% endif %} text-center">
+            {% if gpu_info.available %}
+                <h5><i class="fas fa-microchip"></i> GPU Acceleration ENABLED</h5>
+                <strong>GPU:</strong> {{ gpu_info.name }} | 
+                <strong>Total Memory:</strong> {{ gpu_info.total_memory }} | 
+                <strong>Free Memory:</strong> {{ gpu_info.free_memory }}
+                <br><small class="text-muted">Faster transcription and processing available</small>
+            {% else %}
+                <h5><i class="fas fa-processor"></i> CPU Mode Active</h5>
+                <strong>Status:</strong> {{ gpu_info.message }}
+                <br><small class="text-muted">Processing will be slower but still functional</small>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Main Processing Tabs -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="processingTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-panel" 
+                                type="button" role="tab" aria-controls="video-panel" aria-selected="true">
+                            <i class="fas fa-play-circle"></i> Video Summarizer
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="transcript-tab" data-bs-toggle="tab" data-bs-target="#transcript-panel" 
+                                type="button" role="tab" aria-controls="transcript-panel" aria-selected="false">
+                            <i class="fas fa-file-text"></i> Transcript Processor
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="processingTabsContent">
+                    <!-- YouTube Video Processing Tab -->
+                    <div class="tab-pane fade show active" id="video-panel" role="tabpanel" aria-labelledby="video-tab">
+                        <form id="processForm" enctype="multipart/form-data">
+                    <!-- URL Input -->
+                    <div class="mb-3">
+                        <label for="url" class="form-label">Video URL</label>
+                        <input type="url" class="form-control" id="url" name="url" 
+                               placeholder="https://www.youtube.com/watch?v=... or other video URL" required>
+                    </div>
+
+                    <!-- Model Selection -->
+                    <div class="mb-3">
+                        <label for="model" class="form-label">Whisper Model</label>
+                        <select class="form-select" id="model" name="model">
+                            <option value="tiny">Tiny (Fastest, Lower Quality)</option>
+                            <option value="base">Base (Good Balance)</option>
+                            <option value="small">Small (Better Quality)</option>
+                            <option value="medium">Medium (High Quality)</option>
+                            <option value="turbo" selected>Turbo (Recommended)</option>
+                            <option value="large">Large (Best Quality, Slower)</option>
+                        </select>
+                    </div>
+
+                    <!-- Content Type Selection -->
+                    <div class="mb-3">
+                        <label class="form-label">Content Type</label>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="content_type" 
+                                       id="summary" value="summary" checked>
+                                <label class="form-check-label" for="summary">
+                                    <strong>Quick Summary</strong> - Brief overview of the content
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="content_type" 
+                                       id="study_material" value="study_material">
+                                <label class="form-check-label" for="study_material">
+                                    <strong>Complete Study Material</strong> - Comprehensive educational content
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Study Material Sections (Hidden by default) -->
+                    <div id="studySections" class="content-type-section hidden">
+                        <h6>Select Study Material Sections:</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check section-checkbox">
+                                    <input class="form-check-input" type="checkbox" name="study_sections" 
+                                           value="overview" id="overview" checked>
+                                    <label class="form-check-label" for="overview">Overview & Learning Outcomes</label>
+                                </div>
+                                <div class="form-check section-checkbox">
+                                    <input class="form-check-input" type="checkbox" name="study_sections" 
+                                           value="concept_explanation" id="concept_explanation" checked>
+                                    <label class="form-check-label" for="concept_explanation">Concept Explanation</label>
+                                </div>
+                                <div class="form-check section-checkbox">
+                                    <input class="form-check-input" type="checkbox" name="study_sections" 
+                                           value="examples" id="examples" checked>
+                                    <label class="form-check-label" for="examples">Examples</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check section-checkbox">
+                                    <input class="form-check-input" type="checkbox" name="study_sections" 
+                                           value="case_studies" id="case_studies">
+                                    <label class="form-check-label" for="case_studies">Case Studies</label>
+                                </div>
+                                <div class="form-check section-checkbox">
+                                    <input class="form-check-input" type="checkbox" name="study_sections" 
+                                           value="key_takeaways" id="key_takeaways" checked>
+                                    <label class="form-check-label" for="key_takeaways">Key Takeaways</label>
+                                </div>
+                                <div class="form-check section-checkbox">
+                                    <input class="form-check-input" type="checkbox" name="study_sections" 
+                                           value="practice_exercises" id="practice_exercises">
+                                    <label class="form-check-label" for="practice_exercises">Practice Exercises</label>
+                                </div>
+                                <div class="form-check section-checkbox">
+                                    <input class="form-check-input" type="checkbox" name="study_sections" 
+                                           value="quiz_questions" id="quiz_questions">
+                                    <label class="form-check-label" for="quiz_questions">Quiz Questions</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PDF Upload for Images (Optional) -->
+                    <div class="mb-3">
+                        <label for="pdf_file" class="form-label">
+                            <i class="fas fa-file-pdf"></i> Upload PDF for Images (Optional)
+                        </label>
+                        <input type="file" class="form-control" id="pdf_file" name="pdf_file" 
+                               accept=".pdf" title="Upload a PDF file to extract educational images">
+                        <div class="form-text">
+                            Upload a PDF file to extract relevant images for your study material. 
+                            Images will be automatically analyzed and integrated into appropriate sections.
+                        </div>
+                    </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-play"></i> Process Video
+                            </button>
+                        </form>
+
+                        <!-- Study Material Preview -->
+                        <div id="studyMaterialPreview" class="mt-4 hidden">
+                            <div class="card border-info">
+                                <div class="card-header bg-info text-white">
+                                    <h6><i class="fas fa-book"></i> Study Material Sections Preview</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>Core Content:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check-circle text-success"></i> Overview & Learning Outcomes</li>
+                                                <li><i class="fas fa-check-circle text-success"></i> Detailed Concept Explanations</li>
+                                                <li><i class="fas fa-check-circle text-success"></i> Real-world Examples</li>
+                                                <li><i class="fas fa-check-circle text-muted"></i> Case Studies (optional)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Learning Activities:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check-circle text-success"></i> Key Takeaways</li>
+                                                <li><i class="fas fa-check-circle text-muted"></i> Practice Exercises (optional)</li>
+                                                <li><i class="fas fa-check-circle text-muted"></i> Quiz Questions (optional)</li>
+                                                <li><i class="fas fa-image text-info"></i> Visual Illustrations (if PDF uploaded)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-info mt-3">
+                                        <small><i class="fas fa-info-circle"></i> 
+                                        Your study material will be generated as both Markdown (.md) and PDF formats with embedded images if provided.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transcript Processing Tab -->
+                    <div class="tab-pane fade" id="transcript-panel" role="tabpanel" aria-labelledby="transcript-tab">
+                        <form id="transcriptForm" enctype="multipart/form-data">
+                            <!-- Transcript Title -->
+                            <div class="mb-3">
+                                <label for="transcript_title" class="form-label">Title (Optional)</label>
+                                <input type="text" class="form-control" id="transcript_title" name="transcript_title" 
+                                       placeholder="Enter a title for your content">
+                            </div>
+
+                            <!-- Transcript Text -->
+                            <div class="mb-3">
+                                <label for="transcript_text" class="form-label">Transcript Text</label>
+                                <textarea class="form-control" id="transcript_text" name="transcript_text" 
+                                          rows="8" placeholder="Paste your transcript text here..." required></textarea>
+                                <div class="form-text">
+                                    Paste the transcript text from any video, lecture, or educational content.
+                                </div>
+                            </div>
+
+                            <!-- Content Type Selection -->
+                            <div class="mb-3">
+                                <label class="form-label">Content Type</label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="transcript_content_type" 
+                                               id="transcript_summary" value="summary" checked>
+                                        <label class="form-check-label" for="transcript_summary">
+                                            <strong>Quick Summary</strong> - Brief overview of the content
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="transcript_content_type" 
+                                               id="transcript_study_material" value="study_material">
+                                        <label class="form-check-label" for="transcript_study_material">
+                                            <strong>Complete Study Material</strong> - Comprehensive educational content
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Study Material Sections for Transcript -->
+                            <div id="transcriptStudySections" class="content-type-section hidden">
+                                <h6>Select Study Material Sections:</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-check section-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="transcript_study_sections" 
+                                                   value="overview" id="transcript_overview" checked>
+                                            <label class="form-check-label" for="transcript_overview">Overview & Learning Outcomes</label>
+                                        </div>
+                                        <div class="form-check section-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="transcript_study_sections" 
+                                                   value="concept_explanation" id="transcript_concept_explanation" checked>
+                                            <label class="form-check-label" for="transcript_concept_explanation">Concept Explanation</label>
+                                        </div>
+                                        <div class="form-check section-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="transcript_study_sections" 
+                                                   value="examples" id="transcript_examples" checked>
+                                            <label class="form-check-label" for="transcript_examples">Examples</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check section-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="transcript_study_sections" 
+                                                   value="case_studies" id="transcript_case_studies">
+                                            <label class="form-check-label" for="transcript_case_studies">Case Studies</label>
+                                        </div>
+                                        <div class="form-check section-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="transcript_study_sections" 
+                                                   value="key_takeaways" id="transcript_key_takeaways" checked>
+                                            <label class="form-check-label" for="transcript_key_takeaways">Key Takeaways</label>
+                                        </div>
+                                        <div class="form-check section-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="transcript_study_sections" 
+                                                   value="practice_exercises" id="transcript_practice_exercises">
+                                            <label class="form-check-label" for="transcript_practice_exercises">Practice Exercises</label>
+                                        </div>
+                                        <div class="form-check section-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="transcript_study_sections" 
+                                                   value="quiz_questions" id="transcript_quiz_questions">
+                                            <label class="form-check-label" for="transcript_quiz_questions">Quiz Questions</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PDF Upload for Images (Optional) -->
+                            <div class="mb-3">
+                                <label for="transcript_pdf_file" class="form-label">
+                                    <i class="fas fa-file-pdf"></i> Upload PDF for Images (Optional)
+                                </label>
+                                <input type="file" class="form-control" id="transcript_pdf_file" name="transcript_pdf_file" 
+                                       accept=".pdf" title="Upload a PDF file to extract educational images">
+                                <div class="form-text">
+                                    Upload a PDF file to extract relevant images for your study material.
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg w-100">
+                                <i class="fas fa-file-text"></i> Process Transcript
+                            </button>
+                        </form>
+
+                        <!-- Study Material Preview for Transcript -->
+                        <div id="transcriptStudyMaterialPreview" class="mt-4 hidden">
+                            <div class="card border-success">
+                                <div class="card-header bg-success text-white">
+                                    <h6><i class="fas fa-book"></i> Study Material Sections Preview</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>Core Content:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check-circle text-success"></i> Overview & Learning Outcomes</li>
+                                                <li><i class="fas fa-check-circle text-success"></i> Detailed Concept Explanations</li>
+                                                <li><i class="fas fa-check-circle text-success"></i> Real-world Examples</li>
+                                                <li><i class="fas fa-check-circle text-muted"></i> Case Studies (optional)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Learning Activities:</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-check-circle text-success"></i> Key Takeaways</li>
+                                                <li><i class="fas fa-check-circle text-muted"></i> Practice Exercises (optional)</li>
+                                                <li><i class="fas fa-check-circle text-muted"></i> Quiz Questions (optional)</li>
+                                                <li><i class="fas fa-image text-info"></i> Visual Illustrations (if PDF uploaded)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-success mt-3">
+                                        <small><i class="fas fa-info-circle"></i> 
+                                        Your study material will be generated from the provided transcript with AI-powered content expansion.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shared Progress Section -->
+                <div id="progressSection" class="progress-container hidden mt-4">
+                    <div class="progress">
+                        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" 
+                             role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <div id="statusText" class="status-text text-center">Starting...</div>
+                </div>
+
+                <!-- Shared Results Section -->
+                <div id="resultsSection" class="result-section hidden mt-4">
+                    <div class="alert alert-success">
+                        <h5><i class="fas fa-check-circle"></i> Processing Complete!</h5>
+                        <div id="resultInfo"></div>
+                    </div>
+                    
+                    <!-- Content Preview Section -->
+                    <div id="contentPreview" class="mt-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5><i class="fas fa-eye"></i> Generated Content Preview</h5>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-sm btn-outline-primary" id="showSummary">Summary</button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" id="showStudyMaterial">Study Material</button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" id="showTranscript">Transcript</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Summary Content -->
+                                <div id="summaryContent" class="content-display">
+                                    <div class="content-text"></div>
+                                </div>
+                                
+                                <!-- Study Material Content -->
+                                <div id="studyMaterialContent" class="content-display hidden">
+                                    <div class="content-text"></div>
+                                </div>
+                                
+                                <!-- Transcript Content -->
+                                <div id="transcriptContent" class="content-display hidden">
+                                    <div class="content-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 mt-4">
+                        <h6>Download Files:</h6>
+                        <div id="downloadLinks"></div>
+                    </div>
+                </div>
+
+                <!-- Shared Error Section -->
+                <div id="errorSection" class="alert alert-danger hidden mt-4">
+                    <h5><i class="fas fa-exclamation-triangle"></i> Error</h5>
+                    <div id="errorText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('processForm');
+    const progressSection = document.getElementById('progressSection');
+    const resultsSection = document.getElementById('resultsSection');
+    const errorSection = document.getElementById('errorSection');
+    const studySections = document.getElementById('studySections');
+    
+    // Transcript form elements
+    const transcriptForm = document.getElementById('transcriptForm');
+    const transcriptProgressSection = document.getElementById('transcriptProgressSection');
+    const transcriptResultsSection = document.getElementById('transcriptResultsSection');
+    const transcriptErrorSection = document.getElementById('transcriptErrorSection');
+    const transcriptStudySections = document.getElementById('transcriptStudySections');
+    
+    // Show/hide study sections and preview based on content type
+    document.querySelectorAll('input[name="content_type"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const studyPreview = document.getElementById('studyMaterialPreview');
+            if (this.value === 'study_material') {
+                studySections.classList.remove('hidden');
+                studyPreview.classList.remove('hidden');
+            } else {
+                studySections.classList.add('hidden');
+                studyPreview.classList.add('hidden');
+            }
+        });
+    });
+    
+    // Show/hide transcript study sections and preview based on content type
+    document.querySelectorAll('input[name="transcript_content_type"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const transcriptPreview = document.getElementById('transcriptStudyMaterialPreview');
+            if (this.value === 'study_material') {
+                transcriptStudySections.classList.remove('hidden');
+                transcriptPreview.classList.remove('hidden');
+            } else {
+                transcriptStudySections.classList.add('hidden');
+                transcriptPreview.classList.add('hidden');
+            }
+        });
+    });
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Hide previous results
+        resultsSection.classList.add('hidden');
+        errorSection.classList.add('hidden');
+        progressSection.classList.remove('hidden');
+        
+        // Get form data
+        const formData = new FormData(form);
+        
+        try {
+            // Start processing (send as FormData to handle file uploads)
+            const response = await fetch('/process', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (result.error) {
+                showError(result.error);
+                return;
+            }
+            
+            // Poll for status
+            pollStatus(result.job_id);
+            
+        } catch (error) {
+            showError('Network error: ' + error.message);
+        }
+    });
+    
+    // Transcript form submission
+    transcriptForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Hide previous results and show progress
+        resultsSection.classList.add('hidden');
+        errorSection.classList.add('hidden');
+        progressSection.classList.remove('hidden');
+        
+        // Get form data
+        const formData = new FormData(transcriptForm);
+        
+        try {
+            // Start processing
+            const response = await fetch('/process-transcript', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (result.error) {
+                showError(result.error);
+                return;
+            }
+            
+            // Poll for status using shared function
+            pollStatus(result.job_id);
+            
+        } catch (error) {
+            showError('Network error: ' + error.message);
+        }
+    });
+    
+    function pollStatus(jobId) {
+        const interval = setInterval(async () => {
+            try {
+                const response = await fetch(`/status/${jobId}`);
+                const status = await response.json();
+                
+                // Update progress
+                document.getElementById('progressBar').style.width = status.progress + '%';
+                document.getElementById('statusText').textContent = getStatusText(status.status);
+                
+                if (status.status === 'completed') {
+                    clearInterval(interval);
+                    showResults(status);
+                } else if (status.status === 'error') {
+                    clearInterval(interval);
+                    showError(status.error);
+                }
+                
+            } catch (error) {
+                clearInterval(interval);
+                showError('Error checking status: ' + error.message);
+            }
+        }, 2000);
+    }
+    
+    function getStatusText(status) {
+        const statusMap = {
+            'starting': 'Starting...',
+            'extracting_images': 'Extracting images from PDF...',
+            'getting_info': 'Getting video information...',
+            'downloading': 'Downloading audio...',
+            'transcribing': 'Transcribing audio...',
+            'analyzing_images': 'Analyzing images...',
+            'summarizing': 'Generating summary...',
+            'generating_study_material': 'Creating study material...',
+            'generating_overview': 'Creating overview...',
+            'generating_concept_explanation': 'Explaining concepts...',
+            'generating_examples': 'Creating examples...',
+            'generating_case_studies': 'Developing case studies...',
+            'generating_key_takeaways': 'Summarizing key points...',
+            'generating_practice_exercises': 'Creating exercises...',
+            'generating_quiz_questions': 'Generating quiz questions...',
+            'saving': 'Saving files...',
+            'completed': 'Complete!',
+            'error': 'Error occurred'
+        };
+        return statusMap[status] || status.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }
+    
+    function showResults(status) {
+        progressSection.classList.add('hidden');
+        resultsSection.classList.remove('hidden');
+        
+        const result = status.result;
+        const files = status.files;
+        
+        // Determine if this is video or transcript processing
+        const isVideo = result.segments_count > 0;
+        
+        // Show result info
+        let resultInfoHtml = `<strong>Title:</strong> ${status.video_info.title}<br>`;
+        
+        if (isVideo) {
+            resultInfoHtml += `
+                <strong>Language:</strong> ${result.language}<br>
+                <strong>Duration:</strong> ${Math.floor(status.video_info.duration/60)}:${(status.video_info.duration%60).toString().padStart(2,'0')}<br>
+                <strong>Segments:</strong> ${result.segments_count}<br>
+            `;
+        }
+        
+        resultInfoHtml += `
+            <strong>Content Type:</strong> ${result.content_type}<br>
+            <strong>Images:</strong> ${result.images_count || 0} processed
+        `;
+        
+        document.getElementById('resultInfo').innerHTML = resultInfoHtml;
+        
+        // Store content for display
+        window.currentResult = result;
+        
+        // Setup content display
+        setupContentDisplay(result);
+        
+        // Show download links with appropriate colors
+        let downloadHtml = '';
+        const buttonClass = isVideo ? 'btn-outline-primary' : 'btn-outline-success';
+        
+        for (const [type, filename] of Object.entries(files)) {
+            const icon = getFileIcon(type);
+            downloadHtml += `
+                <a href="/download/${filename}" class="btn ${buttonClass} file-download">
+                    <i class="${icon}"></i> ${getFileLabel(type)}
+                </a>
+            `;
+        }
+        document.getElementById('downloadLinks').innerHTML = downloadHtml;
+    }
+    
+    function setupContentDisplay(result) {
+        // Setup content switching buttons
+        const showSummaryBtn = document.getElementById('showSummary');
+        const showStudyMaterialBtn = document.getElementById('showStudyMaterial');
+        const showTranscriptBtn = document.getElementById('showTranscript');
+        
+        // Remove existing event listeners and add new ones
+        showSummaryBtn.replaceWith(showSummaryBtn.cloneNode(true));
+        showStudyMaterialBtn.replaceWith(showStudyMaterialBtn.cloneNode(true));
+        showTranscriptBtn.replaceWith(showTranscriptBtn.cloneNode(true));
+        
+        // Get the new elements
+        const newShowSummaryBtn = document.getElementById('showSummary');
+        const newShowStudyMaterialBtn = document.getElementById('showStudyMaterial');
+        const newShowTranscriptBtn = document.getElementById('showTranscript');
+        
+        // Add event listeners
+        newShowSummaryBtn.addEventListener('click', () => showContent('summary'));
+        newShowStudyMaterialBtn.addEventListener('click', () => showContent('study_material'));
+        newShowTranscriptBtn.addEventListener('click', () => showContent('transcript'));
+        
+        // Show appropriate content based on what was generated
+        if (result.study_material) {
+            showContent('study_material');
+            newShowStudyMaterialBtn.style.display = 'block';
+        } else if (result.summary) {
+            showContent('summary');
+            newShowSummaryBtn.style.display = 'block';
+        } else {
+            showContent('transcript');
+        }
+        
+        // Hide buttons for content that wasn't generated
+        if (!result.summary) newShowSummaryBtn.style.display = 'none';
+        if (!result.study_material) newShowStudyMaterialBtn.style.display = 'none';
+        if (!result.transcript) newShowTranscriptBtn.style.display = 'none';
+    }
+    
+    function showContent(type) {
+        // Hide all content displays
+        document.getElementById('summaryContent').classList.add('hidden');
+        document.getElementById('studyMaterialContent').classList.add('hidden');
+        document.getElementById('transcriptContent').classList.add('hidden');
+        
+        // Remove active class from all buttons
+        document.getElementById('showSummary').classList.remove('active');
+        document.getElementById('showStudyMaterial').classList.remove('active');
+        document.getElementById('showTranscript').classList.remove('active');
+        
+        // Show selected content and activate button
+        const result = window.currentResult;
+        
+        if (type === 'summary' && result.summary) {
+            document.getElementById('summaryContent').classList.remove('hidden');
+            document.getElementById('showSummary').classList.add('active');
+            document.querySelector('#summaryContent .content-text').innerHTML = formatContent(result.summary);
+        } else if (type === 'study_material' && result.study_material) {
+            document.getElementById('studyMaterialContent').classList.remove('hidden');
+            document.getElementById('showStudyMaterial').classList.add('active');
+            document.querySelector('#studyMaterialContent .content-text').innerHTML = formatContent(result.study_material);
+        } else if (type === 'transcript' && result.transcript) {
+            document.getElementById('transcriptContent').classList.remove('hidden');
+            document.getElementById('showTranscript').classList.add('active');
+            document.querySelector('#transcriptContent .content-text').innerHTML = formatContent(result.transcript);
+        }
+    }
+    
+    function formatContent(content) {
+        if (!content) return 'No content available';
+        
+        // Convert markdown-style formatting to HTML
+        let formatted = content
+            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/`(.*?)`/g, '<code>$1</code>')
+            .replace(/^- (.*$)/gm, '<li>$1</li>')
+            .replace(/^(\d+)\. (.*$)/gm, '<li>$1. $2</li>')
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/^(?!<[h|l|p])/gm, '<p>')
+            .replace(/(?<!>)$/gm, '</p>');
+        
+        // Wrap consecutive <li> elements in <ul>
+        formatted = formatted.replace(/(<li>.*?<\/li>)(\s*<li>.*?<\/li>)*/gs, '<ul>$&</ul>');
+        
+        // Clean up extra <p> tags
+        formatted = formatted.replace(/<p><\/p>/g, '');
+        formatted = formatted.replace(/<p>(<[h|u])/g, '$1');
+        formatted = formatted.replace(/(<\/[h|u][^>]*>)<\/p>/g, '$1');
+        
+        return formatted;
+    }
+    
+    function showError(error) {
+        progressSection.classList.add('hidden');
+        errorSection.classList.remove('hidden');
+        document.getElementById('errorText').textContent = error;
+    }
+    
+    function getFileIcon(type) {
+        const icons = {
+            'transcript': 'fas fa-file-text',
+            'summary': 'fas fa-file-alt',
+            'study_material': 'fas fa-book',
+            'study_material_pdf': 'fas fa-file-pdf',
+            'srt': 'fas fa-closed-captioning',
+            'json': 'fas fa-code'
+        };
+        return icons[type] || 'fas fa-file';
+    }
+    
+    function getFileLabel(type) {
+        const labels = {
+            'transcript': 'Transcript (TXT)',
+            'summary': 'Summary (TXT)',
+            'study_material': 'Study Material (MD)',
+            'study_material_pdf': 'Study Material (PDF)',
+            'srt': 'Subtitles (SRT)',
+            'json': 'Complete Data (JSON)'
+        };
+        return labels[type] || type.toUpperCase();
+    }
+    
+
+});
+</script>
+{% endblock %}

@@ -1,0 +1,32 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/youtube-summarizer', '.']
+  
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/youtube-summarizer']
+  
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+    - 'run'
+    - 'deploy'
+    - 'youtube-summarizer'
+    - '--image'
+    - 'gcr.io/$PROJECT_ID/youtube-summarizer'
+    - '--region'
+    - 'us-central1'
+    - '--platform'
+    - 'managed'
+    - '--allow-unauthenticated'
+    - '--memory'
+    - '4Gi'
+    - '--cpu'
+    - '2'
+    - '--timeout'
+    - '3600'
+
+images:
+  - 'gcr.io/$PROJECT_ID/youtube-summarizer'

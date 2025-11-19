@@ -1,0 +1,972 @@
+1
+00:00:17,879 --> 00:00:27,760
+so the first lecture is going to be on the basics of internet of things so in this lecture
+
+2
+00:00:27,760 --> 00:00:36,520
+we are going to get introduced to the different fundamental concepts behind iot and the basic
+
+3
+00:00:36,520 --> 00:00:42,259
+technologies connectivity devices that are required and an overall understanding about
+
+4
+00:00:42,259 --> 00:00:49,259
+how iot's are made so we are going to have in this lecture an understanding about all
+
+5
+00:00:49,259 --> 00:00:54,399
+of these concepts but first let us get motivated about why iot is required
+
+6
+00:00:55,379 --> 00:01:06,659
+so it has been anticipated that very soon all the different things that are going that
+
+7
+00:01:06,659 --> 00:01:12,560
+we are seeing around us and that we have around us are all going to be internet worked they
+
+8
+00:01:12,560 --> 00:01:21,540
+are all going to be interconnected so at present what we enjoy as services as internet based
+
+9
+00:01:21,540 --> 00:01:29,680
+services is basically a connection of different computers and computing devices so basically
+
+10
+00:01:29,680 --> 00:01:38,840
+this capital i internet that all of us we use is basically a global network or an internet
+
+11
+00:01:38,840 --> 00:01:48,620
+work of different computers and computing devices now what internet of things says is that the
+
+12
+00:01:48,620 --> 00:01:55,840
+scope of this internet is going to be expanded so it is going to be expanded beyond computing
+
+13
+00:01:55,840 --> 00:02:02,019
+and computer devices being connected it is going to interconnect different things that physical
+
+14
+00:02:02,019 --> 00:02:11,060
+objects that we see around us the different objects such as the lighting system in a room
+
+15
+00:02:11,060 --> 00:02:21,479
+the lights the fans the air conditioners and anything and everything including things such as the toothbrush the
+
+16
+00:02:21,479 --> 00:02:31,139
+microwave oven the refrigerator and so on and so forth and not only in our homes but also in our businesses
+
+17
+00:02:31,699 --> 00:02:39,659
+such as internet working different machines internet working ah different ah equipments and so on
+
+18
+00:02:39,659 --> 00:03:03,639
+things that we use at our home in businesses in workplaces everything being internet worked so this is the whole vision of internet work of things internet of things now there are several challenges that are going to arise if we want to do it
+
+19
+00:03:03,639 --> 00:03:21,539
+but before that let us also discuss about why it is going to be required why internet of things has become so popular why it is going to be required it is the reason is that iot is envisaged to be able to provide advanced level of service
+
+20
+00:03:21,539 --> 00:03:31,000
+to the society to the business and so on so advanced levels of services can be offered with the help of iot based technology
+
+21
+00:03:31,000 --> 00:03:43,400
+so what is going to be required so what is going to be required so what is going to happen is is different things the chairs the tables this lighting system the you know the watch ah ah anything
+
+22
+00:03:43,400 --> 00:03:49,960
+and everything that you can think of all of these are going to be fitted with embedded systems embedded
+
+23
+00:03:49,960 --> 00:03:59,599
+electronics and information technology so that they have some basic computing platform in them attached
+
+24
+00:03:59,599 --> 00:04:10,520
+to them and in and then they are going to be acting as different nodes of that particular internet
+
+25
+00:04:10,520 --> 00:04:17,019
+the iot the internet of things right so what is going to happen is these systems these things
+
+26
+00:04:17,019 --> 00:04:23,040
+are going to be all equipped with embedded systems and these embedded systems along with embedded
+
+27
+00:04:23,040 --> 00:04:29,300
+electronics embedded processor embedded ah communication systems and so on they are going to help
+
+28
+00:04:29,300 --> 00:04:35,980
+in connecting the different other things that are around them and depending on the application
+
+29
+00:04:35,980 --> 00:04:42,519
+requirements depending on the specific goals of the business and then a big internet is going
+
+30
+00:04:42,519 --> 00:04:48,680
+to be formed which is much much bigger than the current day internet of computers and that
+
+31
+00:04:48,680 --> 00:04:57,540
+is the internet internet of things iot now iot is one of the building blocks that is considered
+
+32
+00:04:57,540 --> 00:05:09,459
+to be of use for developing smart homes and smart cities so at present not only in our country
+
+33
+00:05:09,459 --> 00:05:20,920
+but throughout the world there is a lot of interest on developing smart cities and smart homes so iot
+
+34
+00:05:20,920 --> 00:05:27,199
+is one of the city is one of the enabling technologies to make the city smart to make make the home smart
+
+35
+00:05:27,199 --> 00:05:31,360
+so how it is going to be done that is going to be more evident as we proceed through the different
+
+36
+00:05:31,360 --> 00:05:36,600
+lectures and the different intricacies that are going to be there in building this complex
+
+37
+00:05:36,600 --> 00:05:43,740
+internet of things is going to be ah evident ah ah through the different lectures that we are
+
+38
+00:05:43,740 --> 00:06:08,420
+going to go through in this particular course so going forward internet technology that we have as i have already said it is going to expand beyond the connection of simple computers so we are going to connect or internet work different machines different
+
+39
+00:06:08,420 --> 00:06:23,379
+tools typically but not necessarily using wireless technologies wireless technologies such as wifi cellular technologies bluetooth zigbee and the different
+
+40
+00:06:23,379 --> 00:06:32,399
+other wireless technologies that are available to us now in order to be able to do it what is
+
+41
+00:06:32,399 --> 00:06:41,560
+what is going to happen is because the number of things is very large much larger than the number
+
+42
+00:06:41,560 --> 00:06:49,139
+of computers that are available so it is going to increase the number of nodes in this particular
+
+43
+00:06:49,139 --> 00:06:58,439
+network so iot in other words is going to have large number of nodes the iot internet work is going
+
+44
+00:06:58,439 --> 00:07:04,720
+to have large number of nodes each node corresponding to the different distinct objects or different
+
+45
+00:07:04,720 --> 00:07:12,779
+things that exist in the physical world so the things basically are going to explode the number
+
+46
+00:07:12,779 --> 00:07:18,439
+of connected things are going to explode in time with with time so the things that are connected
+
+47
+00:07:18,439 --> 00:07:26,279
+to the internet are going to be projected to cross the twenty billion figure in the near future this
+
+48
+00:07:26,279 --> 00:07:33,000
+is what has been projected so large number of things billions and in fact billions and trillions of things are going
+
+49
+00:07:33,000 --> 00:07:41,360
+to be connected to the internet work of things so at this point i should also mention one more
+
+50
+00:07:41,360 --> 00:07:54,519
+thing that this internet work of things can be construed to be built in two different ways one way is to expand
+
+51
+00:07:54,519 --> 00:08:11,560
+the scope of the current day internet that means the internet of computers this is one way so you expand so so essentially what is going to happen using this particular approach is all these different things are going to be connected to the existing internet
+
+52
+00:08:11,560 --> 00:08:23,279
+so this internet is going to be expanded further it is going to become much bigger than what it is at present with only the computers connected this is the first approach the other approach
+
+53
+00:08:23,279 --> 00:08:37,980
+is to build a separate internet work of these physical objects from scratch so one is basically expanding the existing internet the other one is a separate one a separate internet
+
+54
+00:08:37,980 --> 00:08:48,580
+work which is going to be built from scratch so irrespective of which one we adopt each of these approaches has its own separate challenges
+
+55
+00:08:48,580 --> 00:09:05,580
+that have to be overcome so going back we have the unification of different technologies that becomes very very much mandatory we have so internet work of things is not a single
+
+56
+00:09:05,580 --> 00:09:14,799
+technology physical devices can be of different types different types of physical devices having ah different configurations different specifications
+
+57
+00:09:14,799 --> 00:09:30,759
+and so on each of these supported through different ah other systems such as cloud technology big data machine learning networking computer vision you name it and all these different ah ah technologies
+
+58
+00:09:30,759 --> 00:09:37,940
+from electrical sciences and some from even mechanical sciences are required in order to build iot
+
+59
+00:09:42,160 --> 00:10:04,299
+so talking about the ah origin of iot so in the two thousands what we are going to witness is a new era of ubiquity so in this era of ubiquity what is going to happen is not only
+
+60
+00:10:04,299 --> 00:10:20,120
+that we are going to have anywhere any place that means any place any time connectivity or services relating to connectivity that means internet or network connectivity of different types
+
+61
+00:10:20,839 --> 00:10:34,279
+but also the service of connecting anything so anytime any place anything connectivity is what is going to be observed in the in this new era of ubiquity
+
+62
+00:10:35,340 --> 00:11:03,980
+so that is going to result in billions and trillions of things humans everybody being connected and consequently what is going to happen is the number of humans that are on the earth that that is going to this number this figure is going to be outnumbered very soon with the number of things that are connected to the internet work of things
+
+63
+00:11:03,980 --> 00:11:20,340
+internet of things internet of things and consequently what is going to happen is all these different devices all these different things they are going to send lot of data this data has to be handled properly this this data
+
+64
+00:11:20,340 --> 00:11:32,580
+have to be analyzed and this is what we are going to cover in one of the ah next lectures and so what is going to happen is this internet work the new internet
+
+65
+00:11:32,580 --> 00:11:46,679
+network that we are talking about the internet of things is going to be a very complex network with much wider scope than the current day internet and with many more complexities and this is currently the vision
+
+66
+00:11:46,679 --> 00:11:51,659
+of internet of things and all these lectures that we are going to go through in this particular
+
+67
+00:11:51,659 --> 00:11:56,320
+course all the other lectures that we are going to go through they are going to cover about the
+
+68
+00:11:56,320 --> 00:12:00,399
+related different challenges and how there are different tools that are available in order
+
+69
+00:12:00,399 --> 00:12:05,259
+to what are the different tools that are available in order to address these different challenges
+
+70
+00:12:05,259 --> 00:12:10,700
+so we are going to go and ah we are going to get introduced to all these different challenges
+
+71
+00:12:10,700 --> 00:12:16,159
+and the different tools that are available in this particular course we are going to mostly understand
+
+72
+00:12:16,159 --> 00:12:21,279
+a different concepts that are behind them and typically because it is an introductory course we
+
+73
+00:12:21,279 --> 00:12:26,799
+are not going to go through each of these different technologies that are available
+
+74
+00:12:26,799 --> 00:12:33,440
+to us in too much of detail but at a level that will help us to understand the basic
+
+75
+00:12:33,440 --> 00:12:38,200
+concepts for that are required for designing internet of things
+
+76
+00:12:42,159 --> 00:12:49,460
+so there are different enabling technologies for internet of things rfid is one we you
+
+77
+00:12:49,460 --> 00:12:56,440
+know at present in the market places and different places in the society ah you know and ah wherever
+
+78
+00:12:56,440 --> 00:13:04,279
+we go we see that rfid technology being used rfid tags rfid readers are being used so rfids
+
+79
+00:13:04,279 --> 00:13:12,740
+rfid based devices are required for building internet of things sensors is another one which
+
+80
+00:13:12,740 --> 00:13:21,139
+is according to me one of the most important enabling device or enabling technology for
+
+81
+00:13:21,139 --> 00:13:27,519
+building internet of things sensors and actuators sensors and actuators is what we are going
+
+82
+00:13:27,519 --> 00:13:35,279
+to cover ah in one of the ah ah next lectures very shortly and ah and the other things are
+
+83
+00:13:35,279 --> 00:13:41,539
+different network ah networking ah ah devices different connectivities different communication
+
+84
+00:13:41,539 --> 00:13:49,419
+ah paradigms and so on so these are also required in order to connect these different sensors rfids
+
+85
+00:13:49,419 --> 00:13:56,299
+and different other physical devices that have to be internet worked ah to form the iot and
+
+86
+00:13:56,299 --> 00:14:02,659
+finally i would like to mention that at present there is lot of interest in the nanotechnology
+
+87
+00:14:02,659 --> 00:14:12,639
+domain so people are talking about building internet of nano things internet of nano sensors and so
+
+88
+00:14:12,639 --> 00:14:19,279
+on so you know what is going to happen is there are going to be very small sized nano size nano
+
+89
+00:14:19,279 --> 00:14:27,620
+in the order in the in the order of nano sized devices that are going to be used for different
+
+90
+00:14:27,620 --> 00:14:34,000
+purposes for example there could be these nano capsules which can be ah which can be consumed
+
+91
+00:14:34,000 --> 00:14:39,799
+and ah finally which are going to be excreted after they ah ah you know after they have performed
+
+92
+00:14:39,799 --> 00:14:44,500
+their functions so these nano devices are going to be used they are going to be swallowed and
+
+93
+00:14:44,500 --> 00:14:50,120
+consumed and then ah you know so once that is done in the form of capsules they are going
+
+94
+00:14:50,120 --> 00:14:54,820
+to ah ah be internet work these different nano devices these nano capsules are going to talk
+
+95
+00:14:54,820 --> 00:15:02,679
+to each other so these nano devices nano communication devices are being conceptualized at present people
+
+96
+00:15:02,679 --> 00:15:09,580
+are thinking about building these nano devices that can be used to form the internet of nano
+
+97
+00:15:09,580 --> 00:15:17,039
+things so ah once we have this internet of nano things the the the horizon of internet of
+
+98
+00:15:17,039 --> 00:15:27,220
+things is going to be expanded much further so we already have seen that when we are talking
+
+99
+00:15:27,220 --> 00:15:34,039
+about iot it is mostly about networking of physical objects and these physical objects are embedded
+
+100
+00:15:34,559 --> 00:15:40,679
+with ah you know ah different embedded electronics that communicate and sense and interact with the
+
+101
+00:15:40,679 --> 00:15:46,519
+internal states or with the external environment in which they are operating so either they are
+
+102
+00:15:46,519 --> 00:15:51,779
+interacting with each other they change their different states or they are interacting with the
+
+103
+00:15:51,779 --> 00:15:59,399
+inter external environment in which they are operating there are different characteristics
+
+104
+00:16:02,339 --> 00:16:10,840
+there are different characteristics of iot so first of all this iot that we develop that
+
+105
+00:16:10,840 --> 00:16:20,379
+that has to be efficient it has to serve efficiently the requirements of the applications for which
+
+106
+00:16:20,379 --> 00:16:28,600
+they are deployed they have to be scalable because we as we have already seen that ah in iot systems
+
+107
+00:16:29,120 --> 00:16:35,139
+we are talking about large number of things we are talking about not simply millions of things
+
+108
+00:16:35,139 --> 00:16:41,120
+but in in several billions and trillions we are talking about scalability is a very important consideration
+
+109
+00:16:41,120 --> 00:16:46,480
+is a very important issue that has to be addressed so even if the number of sensors and the sensing
+
+110
+00:16:46,480 --> 00:16:54,379
+devices iot devices are going to ah increase the overall network performance should not be compromised
+
+111
+00:16:55,640 --> 00:17:01,539
+so the you know this is challenge in terms of the network so from a networking perspective it is a challenge
+
+112
+00:17:01,539 --> 00:17:10,519
+that has to be worked on there has to be unambiguous naming and addressing architecture so this is very
+
+113
+00:17:10,519 --> 00:17:19,819
+important so all these different devices already we have witnessed that addressing in the ipv four context
+
+114
+00:17:19,819 --> 00:17:26,400
+in the regular existing internet context is a big issue so we are talking about naming and addressing
+
+115
+00:17:26,400 --> 00:17:32,460
+different mechanisms of naming different mechanisms of naming and addressing with the help of ip technology
+
+116
+00:17:32,460 --> 00:17:40,299
+dns etcetera etcetera we are already we have already ah seen that these can be used in order to ah
+
+117
+00:17:40,299 --> 00:17:45,779
+you know address these problems of addressing and naming in the context of ah ah in the context
+
+118
+00:17:45,779 --> 00:17:52,579
+of the present day internet and now when we are expanding this internet in this large scale so what is going
+
+119
+00:17:52,579 --> 00:18:00,519
+to happen is we are going to run into a bigger problem with naming and addressing so we need a new mechanism
+
+120
+00:18:00,519 --> 00:18:07,160
+for naming and addressing of the different nodes these physical nodes the physical objects that are fitted
+
+121
+00:18:07,160 --> 00:18:18,019
+with embedded systems so another thing is that in terms of the resource requirements each of these nodes are
+
+122
+00:18:18,019 --> 00:18:26,140
+typically very low power they have very low resources and they have to ah they have to be you know whenever
+
+123
+00:18:26,140 --> 00:18:32,140
+they are not required they have to be put to the sleeping mode they have to go ah through a sleep cycle
+
+124
+00:18:32,140 --> 00:18:36,859
+so that means whenever they are not being used they are not being active they have to be put to the sleep state
+
+125
+00:18:36,859 --> 00:18:45,539
+and whenever it is required they have to be made active these devices can be mobile they can move for example
+
+126
+00:18:45,539 --> 00:18:55,000
+a smart watch you know whoever is wearing the smart watch when they move this node also moves the smart watch also moves
+
+127
+00:18:55,000 --> 00:19:03,380
+so mobility like this becomes a very important problem in the context of iot networks mobility of the devices
+
+128
+00:19:03,380 --> 00:19:13,619
+and the mobility of the sub networks also is possible so part of the network becomes mobile and in extreme cases
+
+129
+00:19:13,619 --> 00:19:23,380
+even larger network can also become mobile so ip based addressing may not be always very suitable ah in this sort of scenario
+
+130
+00:19:23,380 --> 00:19:31,160
+so what are the different alternatives there are different people different researchers globally who are working on how iot technology
+
+131
+00:19:32,299 --> 00:19:41,980
+how naming can be a different form of naming can be ah can be designed in order to support ah this iot technology
+
+132
+00:19:41,980 --> 00:20:00,059
+and intermittent connectivity is another characteristic that is typical of iot these devices they move they get the network and the sub networks get partitioned one device which is in ah ah connectivity with another device at a later instant of time may not be connected
+
+133
+00:20:00,059 --> 00:20:11,759
+so this is another problem that has to be taken care of so for this for example there is this ah opportunistic mobile networks ah which is a topic ah which
+
+134
+00:20:11,759 --> 00:20:18,460
+can help in addressing this particular problem this ah can help in addressing this particular problem this technology the omn technology can help in addressing this particular problem
+
+135
+00:20:18,460 --> 00:20:24,680
+so opportunistic mobile networks are useful in order to address the problems of intermittent connectivity
+
+136
+00:20:24,680 --> 00:20:37,400
+between the different nodes in the network in terms of application domains there are you know iot is attractive
+
+137
+00:20:37,400 --> 00:20:47,519
+in different applications in different applications spheres application domain spheres for instance manufacturing and business healthcare retail security and so on
+
+138
+00:20:48,920 --> 00:21:06,660
+so in among all of these it is estimated that most of the market share with iot goes with the manufacturing and and business sector so forty point two percent ah percent approximately
+
+139
+00:21:07,400 --> 00:21:20,000
+next is the healthcare third is the healthcare third is the retail sector and fourth is the security so surveillance safety surveillance and so on with the help of iot based systems
+
+140
+00:21:24,340 --> 00:21:37,720
+the how to prove the overall supply chain what are the different equipment that have to be introduced
+
+141
+00:21:39,019 --> 00:21:46,200
+and different sensors and actuators can be fitted to them the different robotic machinery can be used
+
+142
+00:21:46,200 --> 00:22:01,700
+in order to improve the business processes second is the healthcare we are talking about portable healthcare monitoring telemedicine in a much more bigger way that means much remote areas can also be connected
+
+143
+00:22:03,160 --> 00:22:15,940
+the different healthcare facilities hospitals nursing homes doctors nurses irrespective of where they are they can still monitor the healthcare condition
+
+144
+00:22:16,200 --> 00:22:32,839
+the health condition of the patients ah ah that they are ah treating so portable health monitoring electronic record keeping is another so automatically because you know in medical domain record keeping is a very important concern
+
+145
+00:22:32,839 --> 00:22:44,099
+so ah electronic record keeping automatically things are the records medical records are going to be archived they are going to be stored they are going to be you know so ah may be they can be even further analyzed
+
+146
+00:22:44,099 --> 00:23:00,599
+to draw some meaningful conclusions from them and so on and different pharmaceutical safeguards can be had in the using the iot technology in the case of retail sector as well tasks such as inventory tracking
+
+147
+00:23:00,599 --> 00:23:13,099
+smart phone purchasing anonymous analytics of consumer choices these are the different things that can be done efficiently through the use of iot technology security is another biometric and facial recognition
+
+148
+00:23:13,099 --> 00:23:34,640
+recognition looks ah then ah ah then ah remote sensors ah and so on ah you know finger printing based or face recognition based or different iris recognition based you know so these technologies can be ah connected and use the with the help of ah iot ah the ah you know this this this sort of security mechanisms can be developed
+
+149
+00:23:37,400 --> 00:23:51,220
+now when we talk about now when we talk about this interconnectivity of different devices we see that this interconnection or connectivity between the different devices has evolved over the years
+
+150
+00:23:51,220 --> 00:24:04,380
+first it started with these individual cache machines or the atms being internet worked the web became very popular so you know everybody connects to the internet
+
+151
+00:24:04,640 --> 00:24:16,500
+or the web or the web in order to get access to different information send emails and so on and so forth many different things are performed by different web users at present
+
+152
+00:24:17,819 --> 00:24:34,519
+smart meter meters then became popular so smart meters are used at different homes in a city the smart meters they can be programmable and they can record different things even you can program the smart meters at your homes in order to do different things
+
+153
+00:24:34,640 --> 00:24:49,579
+like load balancing electrical load balancing efficient use of electricity ah you know using electricity during non peak hours pricing accordingly in a pricing mechanism using different options ah for service
+
+154
+00:24:49,579 --> 00:25:02,440
+of electricity that is provided by the service provider and so on and then we have digital locks biometric based digital locks are very popular we have smart
+
+155
+00:25:02,440 --> 00:25:14,099
+smart healthcare smart healthcare smart vehicles smart cities and smart dust so these are the different ah different technologies that have evolved these are the different connected ah you
+
+156
+00:25:14,099 --> 00:25:16,579
+know device based technologies that have evolved over the years
+
+157
+00:25:19,740 --> 00:25:27,640
+so atm and web are relatively old by now one comes from nineteen seventies the other one from nineteen nineties
+
+158
+00:25:27,640 --> 00:25:44,720
+smart meters but smart meters became very popular in the two thousands digital locks are very popular at present so smart phones can be used as locks to lock and unlock unlock the doors remotely at your homes
+
+159
+00:25:44,720 --> 00:25:57,400
+or at your businesses and these lock keys and so on they can be easily changed and one can be granted access to a particular facility one means
+
+160
+00:25:57,640 --> 00:26:04,440
+in a business in a business the employees or the different in a business the employees or the different guests they can be granted access to different facilities through the digital locks
+
+161
+00:26:04,440 --> 00:26:23,440
+much more easily than the conventional locks smart healthcare connected vehicles smart vehicles you know ah these are quite common smart cities as i was telling you is very very popular at present not only in india but throughout the globe
+
+162
+00:26:24,840 --> 00:26:35,920
+so in smart city people are talking about deploying smart ah different ah different ah i city in infrastructure ah these infrastructure which can communicate with each other they
+
+163
+00:26:35,920 --> 00:26:50,460
+can be used by different owners and the different operations in a city ah and ah ah the different functions of the different offices etcetera you know so all these things offices and ah different other public places all these things can be monitored
+
+164
+00:26:50,460 --> 00:26:56,980
+and operations can be improved ah much more easily ah ah and ah also the information dissemination
+
+165
+00:26:56,980 --> 00:27:01,680
+because you know ah the all these different devices they are typically fitted with sensors so these
+
+166
+00:27:01,680 --> 00:27:06,500
+sensors are going to throw in lot of data so in this ah so so dissemination of this particular
+
+167
+00:27:06,500 --> 00:27:12,140
+data is very important handling of this particular data is very important in the context of smart cities
+
+168
+00:27:12,140 --> 00:27:19,660
+smart dust is another thing where the computers that are smaller than a grain of sand can be
+
+169
+00:27:19,660 --> 00:27:26,339
+spread or injected almost anywhere to measure chemicals in the soil or to diagnose problems in the human body
+
+170
+00:27:28,840 --> 00:27:46,319
+so in the modern day iot people are talking about different applications such as smart parking structural health monitoring noise urban maps that means noise maps in a particular city or an urban environment
+
+171
+00:27:46,319 --> 00:27:54,579
+smart phone detection traffic congestion smart lighting system waste management smart roads river flood
+
+172
+00:27:54,579 --> 00:28:02,380
+monitoring smart grid tank monitoring water tanks etcetera tank level monitoring photovoltaic ah
+
+173
+00:28:02,380 --> 00:28:11,119
+installations water flow monitoring stock calculations access control presence of different liquids hazardous
+
+174
+00:28:11,119 --> 00:28:22,799
+materials and so on and so forth large number of applications are envisaged in fact they have you know there are many ah iot oriented systems have been built already
+
+175
+00:28:22,799 --> 00:28:32,900
+they have been prototyped some have been much more advanced than in that than a simple prototype and these can be used for serving not only these applications that i just mentioned
+
+176
+00:28:32,900 --> 00:28:44,880
+ah ah but also a large number of different ah but also a large number of different other types of applications for example healthcare space applications and so on and so forth the number is many and you know anywhere
+
+177
+00:28:44,880 --> 00:28:57,319
+that you see there is a problem iot is quite likely can be used in order to improve the efficiency of the solution to that particular problem
+
+178
+00:28:59,539 --> 00:29:04,940
+different ah different other applications such as forest fire detection air pollution monitoring
+
+179
+00:29:04,940 --> 00:29:10,599
+snow level monitoring landslide monitoring and avalanche prediction prevention actually landslide
+
+180
+00:29:10,599 --> 00:29:15,799
+monitoring in our country there have been different institutions ah ah that have already developed
+
+181
+00:29:15,799 --> 00:29:23,559
+systems for landslide monitoring ah ah so so ah without getting into the details of it let me proceed
+
+182
+00:29:23,559 --> 00:29:30,019
+further so we have earthquake early detection and monitoring seismic system seismic sensors have
+
+183
+00:29:30,019 --> 00:29:34,980
+been developed they can be connected they can be internet worked and so on water leakage monitoring
+
+184
+00:29:34,980 --> 00:29:42,180
+in a water ah water ah delivery system water transmission system in a city radiation level monitoring
+
+185
+00:29:42,180 --> 00:29:48,839
+explosive ex exclusive monitoring and hazardous gas monitoring supply chain control nfc payment intelligent
+
+186
+00:29:48,839 --> 00:29:55,039
+shopping applications and smart product management as i was telling you before you can in fact think
+
+187
+00:29:55,039 --> 00:30:05,000
+of iot applications in almost any sphere of the society any sphere of life so what is expected
+
+188
+00:30:05,000 --> 00:30:13,660
+in order to build iot is to have trillions of sensors billions of smart systems millions of applications
+
+189
+00:30:13,660 --> 00:30:19,940
+applications all of which are going to be internet worked they are going to be made synchronously
+
+190
+00:30:19,940 --> 00:30:30,920
+operated in order to form in order to build iot different enablers of iot in terms of in terms
+
+191
+00:30:30,920 --> 00:30:39,619
+of enabling technologies we have from a implementations perspective different technologies such as you know smart homes
+
+192
+00:30:39,619 --> 00:30:51,480
+smart factories and so on different sensors can be fitted ah and then and we also have ah different connectivity
+
+193
+00:30:51,480 --> 00:31:04,920
+offering devices such as rfids zigbee ah wifi ah wifi ah cellular connectivity six low pan laura ah and so on and so forth so different connectivity
+
+194
+00:31:04,920 --> 00:31:12,299
+offering ah technologies are required and in terms of implementation as i was telling you factories
+
+195
+00:31:12,299 --> 00:31:22,480
+homes you know ah banks and ah ah ah ah ah transportation sector ah agriculture ah you know healthcare ah and so on and so forth
+
+196
+00:31:22,480 --> 00:31:33,259
+all of these different technologies are required and the other enabling technology is things like big data deep learning artificial intelligence sensor network
+
+197
+00:31:33,259 --> 00:31:40,259
+a regular network the regular wireless and wireless wireless wireless wireless wireless wireless wireless wireless networks all of these are different enablers for building iot
+
+198
+00:31:44,539 --> 00:31:56,980
+in terms of connectivity typically there are three layers of connectivity service service layer local connectivity and global connectivity for global connectivity
+
+199
+00:31:56,980 --> 00:32:04,160
+we have the internet for local collectivity we have components such as the gateway and
+
+200
+00:32:04,779 --> 00:32:12,740
+for service level using different communication ah technologies such as these ah you know
+
+201
+00:32:12,740 --> 00:32:18,200
+different services can be offered to different different application areas such as healthcare
+
+202
+00:32:18,200 --> 00:32:27,279
+agriculture ah you know businesses factories plants banks and so on in terms of the baseline
+
+203
+00:32:27,840 --> 00:32:31,839
+technologies there are quite a few baseline technologies that are that can be used machine
+
+204
+00:32:31,839 --> 00:32:36,000
+to machine communication is one in machine to machine communication one machine directly
+
+205
+00:32:36,000 --> 00:32:41,519
+talks to another machine communicates with another machine without any human intervention
+
+206
+00:32:41,519 --> 00:32:47,920
+we have the cyber physical systems where the cyber ah ah ah the physical systems are
+
+207
+00:32:47,920 --> 00:32:54,220
+basically equipped with computer and connectivity computational and connectivity mechanisms so
+
+208
+00:32:54,220 --> 00:33:00,420
+we have a cyber physical system which works hand in hand cyber one the cyber component of
+
+209
+00:33:00,420 --> 00:33:04,660
+the system works hand in hand with the physical component of the system so we have cyber physical
+
+210
+00:33:04,660 --> 00:33:10,000
+system we have web of things which is sort of like ah ah
+
+211
+00:33:10,000 --> 00:33:19,619
+the web version of the internet of things so iot and m2m these go almost hand in hand
+
+212
+00:33:19,619 --> 00:33:26,319
+but there is a distinction whereas m2m is just concerned about communication and interaction
+
+213
+00:33:26,319 --> 00:33:34,839
+between two machines or two devices using technologies such as cloud regular internet
+
+214
+00:33:34,839 --> 00:33:44,299
+and so on ah in the case of iot iot the scope is much bigger so in iot we are talking about
+
+215
+00:33:44,299 --> 00:33:51,380
+not only machine to machine communication but different other things as well so m2m can
+
+216
+00:33:51,380 --> 00:33:58,000
+be construed to be a part of iot while m2m standards have a prominent place in the iot
+
+217
+00:33:58,000 --> 00:34:06,019
+standard landscape however iot has a broader scope than m2m so there can be broader range
+
+218
+00:34:06,019 --> 00:34:10,940
+of interactions not simply machine to machine interaction there can be interactions between
+
+219
+00:34:10,940 --> 00:34:17,679
+ah not only machines and machines things and things but also things and people things and
+
+220
+00:34:17,679 --> 00:34:20,599
+applications and people with applications
+
+221
+00:34:24,779 --> 00:34:31,119
+iot and web of things internet of things and web of things are often confused to be the
+
+222
+00:34:31,119 --> 00:34:36,739
+one and the same but there is a distinction the web of things ah basically focuses more
+
+223
+00:34:36,739 --> 00:34:44,420
+on the use of web based technologies such as html five javascript ajax php and so on and so
+
+224
+00:34:44,420 --> 00:34:56,659
+forth over the regular iot to make iot smarter and web accessible there are lot of terminological
+
+225
+00:34:56,659 --> 00:35:04,059
+interdependence when we talk about iot iot has similarity with internet of people which
+
+226
+00:35:04,059 --> 00:35:15,780
+has a people focus iot ah from iot ah different ah using iot different ah industry oriented machines
+
+227
+00:35:15,780 --> 00:35:23,960
+and so on ah can be controlled so we have smart factories ah ah you know smart factories using
+
+228
+00:35:23,960 --> 00:35:30,659
+a robots virtual reality and so on one can have industry four point zero which is an approach
+
+229
+00:35:30,659 --> 00:35:39,480
+to ah the modern day mechanization or ah improvement of the current day plants and industries internet
+
+230
+00:35:39,480 --> 00:35:47,679
+of environment is another we have cps which is basically the hyperphysical systems where
+
+231
+00:35:47,679 --> 00:35:53,880
+these systems basically autonomously they operate and they can in fact in an iot world what can
+
+232
+00:35:53,880 --> 00:35:59,280
+happen is these cps systems these different cps systems they can be internet work together
+
+233
+00:35:59,280 --> 00:36:07,199
+in this particular ah ah internet that means the internet of things we have m to m machine
+
+234
+00:36:07,199 --> 00:36:11,860
+to machine communication i already mentioned to you may be what can happen in a smart home
+
+235
+00:36:12,500 --> 00:36:23,199
+machines such as the lighting system can talk to the cooling system directly the cooling
+
+236
+00:36:23,199 --> 00:36:36,159
+system can talk to can communicate with the fans directly the fans can communicate with a mobile
+
+237
+00:36:36,159 --> 00:36:41,699
+phone directly or the mobile phone can communicate with a fan directly so as you can see that between
+
+238
+00:36:41,699 --> 00:36:50,300
+two different machines without any human intervention ah you know communication can take place and this
+
+239
+00:36:50,300 --> 00:37:00,019
+is known as m to m so with this we come to an end ah of this particular lecture and we are going to continue
+
+240
+00:37:00,019 --> 00:37:05,960
+with the introduction in the next part of the lecture as well and so far what we have understood
+
+241
+00:37:05,960 --> 00:37:11,920
+are the basics of internet of things the motivation behind internet of things the different application
+
+242
+00:37:11,920 --> 00:37:18,519
+areas the different pain points the challenges that are involved and what we are envisioning when
+
+243
+00:37:18,519 --> 00:37:24,440
+we are talking about building internet of things in the future thank you
+

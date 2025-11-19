@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Files - Video Summarizer{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4><i class="fas fa-folder"></i> Generated Files</h4>
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Process New Video
+                </a>
+            </div>
+            <div class="card-body">
+                {% if files %}
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Size</th>
+                                    <th>Modified</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for file in files %}
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-file"></i>
+                                        {{ file.name }}
+                                    </td>
+                                    <td>{{ "%.1f"|format(file.size / 1024) }} KB</td>
+                                    <td>{{ file.modified|timestamp_to_date }}</td>
+                                    <td>
+                                        <a href="/download/{{ file.name }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-download"></i> Download
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
+                        <h5 class="text-muted">No files found</h5>
+                        <p class="text-muted">Process a video to generate files</p>
+                        <a href="/" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Process Video
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

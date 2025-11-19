@@ -1,0 +1,27 @@
+# Core Flask web framework
+flask>=3.0.0
+
+# AI and ML libraries
+openai-whisper
+torch
+torchaudio
+ollama>=0.1.7
+
+# Video processing
+yt-dlp
+
+# PDF processing (optional)
+pdfplumber
+PyMuPDF
+Pillow
+reportlab
+
+# Utilities
+numpy
+tqdm
+more-itertools
+tiktoken
+markdown
+
+# GPU support (optional - for NVIDIA GPUs)
+triton>=2.0.0;platform_machine=="x86_64" and sys_platform=="linux" or sys_platform=="linux2"

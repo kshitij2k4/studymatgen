@@ -1,0 +1,16 @@
+Title: Introduction to Object Oriented Programming
+Duration: 0:00
+--------------------------------------------------
+
+SUMMARY:
+**Main Topic:** Introduction to Object-Oriented Programming
+
+**Key Points:**
+
+1. The concept of object-oriented programming (OOP) is introduced, including its power and potential in creating efficient and modular code.
+2. A storytelling approach is used to illustrate the basics of OOP, using a scenario where four friends go for an ice cream party with different flavors and share them from a large brick.
+3. The animation demonstrates different scenarios, such as individual cones and shared cups, highlighting the importance of memory conservation and variable lifetime.
+
+**Key Takeaways:**
+
+Object-oriented programming is introduced through a relatable scenario, emphasizing its potential to create efficient and modular code. Understanding automatic variables, local scope, and memory conservation is crucial in OOP. The key takeaway is that OOP concepts are essential for creating scalable and maintainable code.

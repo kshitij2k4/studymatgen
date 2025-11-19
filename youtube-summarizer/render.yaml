@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: youtube-summarizer
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 5000
+    disk:
+      name: youtube-summarizer-disk
+      mountPath: /app/outputs
+      sizeGB: 10

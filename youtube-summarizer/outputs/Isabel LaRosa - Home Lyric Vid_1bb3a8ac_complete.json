@@ -1,0 +1,1847 @@
+{
+  "video_info": {
+    "title": "Isabel LaRosa - Home (Lyric Video)",
+    "duration": 136,
+    "uploader": "Isabel LaRosa",
+    "thumbnail": "https://i.ytimg.com/vi_webp/Y38RsH-hG0A/maxresdefault.webp",
+    "view_count": 1016077
+  },
+  "transcript": {
+    "text": " Something could have to go on The house is empty, but I can't seem to let it go Somebody help me, show me how to be alone I'm almost twenty, but tell me why I feel so old Yeah, I can't move on, but there's nothing left to hold Don't think I'll ever go home I'm not a kid anymore I'm leaving a piece of my soul Don't think I'll ever go home And to my sister, call me when you need some help You know I'm with you, you're beautiful just as yourself To the boys that kiss her, you better fucking treat her well Cause I promised God for her I'd go to hell Don't think I'll ever go home I'm not a kid anymore I'm leaving a piece of my soul Don't think I'll ever go home I'm leaving a piece of my soul When you're my sister, call me when you need some help I'm leaving a piece of my soul I'm leaving a piece of your soul Don't think I'll ever go home I'm leaving a piece of my soul Don't think I'll ever go home Thank you.",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 3.08,
+        "text": " Something could have to go on",
+        "tokens": [
+          50365,
+          6595,
+          727,
+          362,
+          281,
+          352,
+          322,
+          50685
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.29074219294956755,
+        "compression_ratio": 1.486842105263158,
+        "no_speech_prob": 1.3681548949318056e-11,
+        "words": [
+          {
+            "word": " Something",
+            "start": 0.0,
+            "end": 0.44,
+            "probability": 0.37577304244041443
+          },
+          {
+            "word": " could",
+            "start": 0.44,
+            "end": 0.82,
+            "probability": 0.17042326927185059
+          },
+          {
+            "word": " have",
+            "start": 0.82,
+            "end": 1.06,
+            "probability": 0.4076732397079468
+          },
+          {
+            "word": " to",
+            "start": 1.06,
+            "end": 1.3,
+            "probability": 0.6293688416481018
+          },
+          {
+            "word": " go",
+            "start": 1.3,
+            "end": 1.54,
+            "probability": 0.9948052763938904
+          },
+          {
+            "word": " on",
+            "start": 1.54,
+            "end": 3.08,
+            "probability": 0.29800182580947876
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 6.4799999999999995,
+        "end": 10.58,
+        "text": " The house is empty, but I can't seem to let it go",
+        "tokens": [
+          50685,
+          440,
+          1782,
+          307,
+          6707,
+          11,
+          457,
+          286,
+          393,
+          380,
+          1643,
+          281,
+          718,
+          309,
+          352,
+          50903
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.29074219294956755,
+        "compression_ratio": 1.486842105263158,
+        "no_speech_prob": 1.3681548949318056e-11,
+        "words": [
+          {
+            "word": " The",
+            "start": 6.4799999999999995,
+            "end": 7.12,
+            "probability": 0.8316164016723633
+          },
+          {
+            "word": " house",
+            "start": 7.12,
+            "end": 7.38,
+            "probability": 0.9983394145965576
+          },
+          {
+            "word": " is",
+            "start": 7.38,
+            "end": 7.56,
+            "probability": 0.9904506802558899
+          },
+          {
+            "word": " empty,",
+            "start": 7.56,
+            "end": 7.94,
+            "probability": 0.999612033367157
+          },
+          {
+            "word": " but",
+            "start": 8.36,
+            "end": 9.08,
+            "probability": 0.9564001560211182
+          },
+          {
+            "word": " I",
+            "start": 9.08,
+            "end": 9.24,
+            "probability": 0.98029625415802
+          },
+          {
+            "word": " can't",
+            "start": 9.24,
+            "end": 9.44,
+            "probability": 0.9971626996994019
+          },
+          {
+            "word": " seem",
+            "start": 9.44,
+            "end": 9.62,
+            "probability": 0.9980949759483337
+          },
+          {
+            "word": " to",
+            "start": 9.62,
+            "end": 9.8,
+            "probability": 0.9993423819541931
+          },
+          {
+            "word": " let",
+            "start": 9.8,
+            "end": 10.06,
+            "probability": 0.9997522234916687
+          },
+          {
+            "word": " it",
+            "start": 10.06,
+            "end": 10.2,
+            "probability": 0.9987254738807678
+          },
+          {
+            "word": " go",
+            "start": 10.2,
+            "end": 10.58,
+            "probability": 0.9997616410255432
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 12.86,
+        "end": 16.54,
+        "text": " Somebody help me, show me how to be alone",
+        "tokens": [
+          50903,
+          13463,
+          854,
+          385,
+          11,
+          855,
+          385,
+          577,
+          281,
+          312,
+          3312,
+          51201
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.29074219294956755,
+        "compression_ratio": 1.486842105263158,
+        "no_speech_prob": 1.3681548949318056e-11,
+        "words": [
+          {
+            "word": " Somebody",
+            "start": 12.86,
+            "end": 13.5,
+            "probability": 0.9931105375289917
+          },
+          {
+            "word": " help",
+            "start": 13.5,
+            "end": 13.82,
+            "probability": 0.9987040758132935
+          },
+          {
+            "word": " me,",
+            "start": 13.82,
+            "end": 14.16,
+            "probability": 0.9999001026153564
+          },
+          {
+            "word": " show",
+            "start": 14.8,
+            "end": 15.28,
+            "probability": 0.9979063272476196
+          },
+          {
+            "word": " me",
+            "start": 15.28,
+            "end": 15.48,
+            "probability": 0.9998526573181152
+          },
+          {
+            "word": " how",
+            "start": 15.48,
+            "end": 15.7,
+            "probability": 0.9995375871658325
+          },
+          {
+            "word": " to",
+            "start": 15.7,
+            "end": 15.84,
+            "probability": 0.9997746348381042
+          },
+          {
+            "word": " be",
+            "start": 15.84,
+            "end": 16.06,
+            "probability": 0.9980556964874268
+          },
+          {
+            "word": " alone",
+            "start": 16.06,
+            "end": 16.54,
+            "probability": 0.9987813830375671
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 18.72,
+        "end": 22.82,
+        "text": " I'm almost twenty, but tell me why I feel so old",
+        "tokens": [
+          51201,
+          286,
+          478,
+          1920,
+          7699,
+          11,
+          457,
+          980,
+          385,
+          983,
+          286,
+          841,
+          370,
+          1331,
+          51508
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.29074219294956755,
+        "compression_ratio": 1.486842105263158,
+        "no_speech_prob": 1.3681548949318056e-11,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 18.72,
+            "end": 19.36,
+            "probability": 0.9991946816444397
+          },
+          {
+            "word": " almost",
+            "start": 19.36,
+            "end": 19.68,
+            "probability": 0.9997856020927429
+          },
+          {
+            "word": " twenty,",
+            "start": 19.68,
+            "end": 20.04,
+            "probability": 0.6572571396827698
+          },
+          {
+            "word": " but",
+            "start": 20.7,
+            "end": 21.14,
+            "probability": 0.9991708993911743
+          },
+          {
+            "word": " tell",
+            "start": 21.14,
+            "end": 21.36,
+            "probability": 0.9992345571517944
+          },
+          {
+            "word": " me",
+            "start": 21.36,
+            "end": 21.54,
+            "probability": 0.9998959302902222
+          },
+          {
+            "word": " why",
+            "start": 21.54,
+            "end": 21.78,
+            "probability": 0.9988479614257812
+          },
+          {
+            "word": " I",
+            "start": 21.78,
+            "end": 21.98,
+            "probability": 0.9974575638771057
+          },
+          {
+            "word": " feel",
+            "start": 21.98,
+            "end": 22.08,
+            "probability": 0.9991973042488098
+          },
+          {
+            "word": " so",
+            "start": 22.08,
+            "end": 22.44,
+            "probability": 0.9756141901016235
+          },
+          {
+            "word": " old",
+            "start": 22.44,
+            "end": 22.82,
+            "probability": 0.9909077882766724
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 24.74,
+        "end": 29.08,
+        "text": " Yeah, I can't move on, but there's nothing left to hold",
+        "tokens": [
+          51508,
+          865,
+          11,
+          286,
+          393,
+          380,
+          1286,
+          322,
+          11,
+          457,
+          456,
+          311,
+          1825,
+          1411,
+          281,
+          1797,
+          51834
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.29074219294956755,
+        "compression_ratio": 1.486842105263158,
+        "no_speech_prob": 1.3681548949318056e-11,
+        "words": [
+          {
+            "word": " Yeah,",
+            "start": 24.74,
+            "end": 25.38,
+            "probability": 0.9876440167427063
+          },
+          {
+            "word": " I",
+            "start": 25.44,
+            "end": 25.56,
+            "probability": 0.9883872866630554
+          },
+          {
+            "word": " can't",
+            "start": 25.56,
+            "end": 25.92,
+            "probability": 0.9946211576461792
+          },
+          {
+            "word": " move",
+            "start": 25.92,
+            "end": 26.38,
+            "probability": 0.9999104738235474
+          },
+          {
+            "word": " on,",
+            "start": 26.38,
+            "end": 26.64,
+            "probability": 0.9999145269393921
+          },
+          {
+            "word": " but",
+            "start": 26.78,
+            "end": 26.88,
+            "probability": 0.999754011631012
+          },
+          {
+            "word": " there's",
+            "start": 26.88,
+            "end": 27.12,
+            "probability": 0.9998140931129456
+          },
+          {
+            "word": " nothing",
+            "start": 27.12,
+            "end": 27.56,
+            "probability": 0.9715976715087891
+          },
+          {
+            "word": " left",
+            "start": 27.56,
+            "end": 28.16,
+            "probability": 0.9991391897201538
+          },
+          {
+            "word": " to",
+            "start": 28.16,
+            "end": 28.48,
+            "probability": 0.9997739195823669
+          },
+          {
+            "word": " hold",
+            "start": 28.48,
+            "end": 29.08,
+            "probability": 0.9990321397781372
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 2908,
+        "start": 29.900000000000002,
+        "end": 32.58,
+        "text": " Don't think I'll ever go home",
+        "tokens": [
+          50365,
+          1468,
+          380,
+          519,
+          286,
+          603,
+          1562,
+          352,
+          1280,
+          50607
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.38726756572723386,
+        "compression_ratio": 1.3658536585365855,
+        "no_speech_prob": 3.5706561405529635e-12,
+        "words": [
+          {
+            "word": " Don't",
+            "start": 29.900000000000002,
+            "end": 30.62,
+            "probability": 0.8298261165618896
+          },
+          {
+            "word": " think",
+            "start": 30.62,
+            "end": 30.84,
+            "probability": 0.9797630906105042
+          },
+          {
+            "word": " I'll",
+            "start": 30.84,
+            "end": 31.24,
+            "probability": 0.9216263294219971
+          },
+          {
+            "word": " ever",
+            "start": 31.24,
+            "end": 31.52,
+            "probability": 0.9878656268119812
+          },
+          {
+            "word": " go",
+            "start": 31.52,
+            "end": 31.82,
+            "probability": 0.9881584048271179
+          },
+          {
+            "word": " home",
+            "start": 31.82,
+            "end": 32.58,
+            "probability": 0.9315202236175537
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 2908,
+        "start": 36.02,
+        "end": 38.2,
+        "text": " I'm not a kid anymore",
+        "tokens": [
+          50607,
+          286,
+          478,
+          406,
+          257,
+          1636,
+          3602,
+          50835
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.38726756572723386,
+        "compression_ratio": 1.3658536585365855,
+        "no_speech_prob": 3.5706561405529635e-12,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 36.02,
+            "end": 36.74,
+            "probability": 0.9249624013900757
+          },
+          {
+            "word": " not",
+            "start": 36.74,
+            "end": 36.96,
+            "probability": 0.9720596075057983
+          },
+          {
+            "word": " a",
+            "start": 36.96,
+            "end": 37.2,
+            "probability": 0.9719586968421936
+          },
+          {
+            "word": " kid",
+            "start": 37.2,
+            "end": 37.52,
+            "probability": 0.9983705878257751
+          },
+          {
+            "word": " anymore",
+            "start": 37.52,
+            "end": 38.2,
+            "probability": 0.9938650727272034
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 2908,
+        "start": 41.74,
+        "end": 44.36,
+        "text": " I'm leaving a piece of my soul",
+        "tokens": [
+          50835,
+          286,
+          478,
+          5012,
+          257,
+          2522,
+          295,
+          452,
+          5133,
+          51145
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.38726756572723386,
+        "compression_ratio": 1.3658536585365855,
+        "no_speech_prob": 3.5706561405529635e-12,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 41.74,
+            "end": 42.46,
+            "probability": 0.9892682731151581
+          },
+          {
+            "word": " leaving",
+            "start": 42.46,
+            "end": 42.86,
+            "probability": 0.979227602481842
+          },
+          {
+            "word": " a",
+            "start": 42.86,
+            "end": 43.26,
+            "probability": 0.8061324954032898
+          },
+          {
+            "word": " piece",
+            "start": 43.26,
+            "end": 43.6,
+            "probability": 0.9906099438667297
+          },
+          {
+            "word": " of",
+            "start": 43.6,
+            "end": 43.78,
+            "probability": 0.9966710209846497
+          },
+          {
+            "word": " my",
+            "start": 43.78,
+            "end": 43.98,
+            "probability": 0.9960151314735413
+          },
+          {
+            "word": " soul",
+            "start": 43.98,
+            "end": 44.36,
+            "probability": 0.9872380495071411
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "seek": 2908,
+        "start": 48.120000000000005,
+        "end": 52.14,
+        "text": " Don't think I'll ever go home",
+        "tokens": [
+          51320,
+          1468,
+          380,
+          519,
+          286,
+          603,
+          1562,
+          352,
+          1280,
+          51627
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.38726756572723386,
+        "compression_ratio": 1.3658536585365855,
+        "no_speech_prob": 3.5706561405529635e-12,
+        "words": [
+          {
+            "word": " Don't",
+            "start": 48.120000000000005,
+            "end": 48.84,
+            "probability": 0.9866216778755188
+          },
+          {
+            "word": " think",
+            "start": 48.84,
+            "end": 49.06,
+            "probability": 0.9990085959434509
+          },
+          {
+            "word": " I'll",
+            "start": 49.06,
+            "end": 49.38,
+            "probability": 0.9962325096130371
+          },
+          {
+            "word": " ever",
+            "start": 49.38,
+            "end": 49.78,
+            "probability": 0.9971907734870911
+          },
+          {
+            "word": " go",
+            "start": 49.78,
+            "end": 50.08,
+            "probability": 0.9995869994163513
+          },
+          {
+            "word": " home",
+            "start": 50.08,
+            "end": 52.14,
+            "probability": 0.9944632649421692
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "seek": 5214,
+        "start": 55.24,
+        "end": 59.22,
+        "text": " And to my sister, call me when you need some help",
+        "tokens": [
+          50365,
+          400,
+          281,
+          452,
+          4892,
+          11,
+          818,
+          385,
+          562,
+          291,
+          643,
+          512,
+          854,
+          50727
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.16205711986707605,
+        "compression_ratio": 1.2945736434108528,
+        "no_speech_prob": 3.493382666475142e-12,
+        "words": [
+          {
+            "word": " And",
+            "start": 55.24,
+            "end": 55.78,
+            "probability": 0.6017010807991028
+          },
+          {
+            "word": " to",
+            "start": 55.78,
+            "end": 55.9,
+            "probability": 0.8849470615386963
+          },
+          {
+            "word": " my",
+            "start": 55.9,
+            "end": 56.1,
+            "probability": 0.9980188608169556
+          },
+          {
+            "word": " sister,",
+            "start": 56.1,
+            "end": 56.54,
+            "probability": 0.9990611672401428
+          },
+          {
+            "word": " call",
+            "start": 56.6,
+            "end": 57.86,
+            "probability": 0.9752746224403381
+          },
+          {
+            "word": " me",
+            "start": 57.86,
+            "end": 58.04,
+            "probability": 0.9997685551643372
+          },
+          {
+            "word": " when",
+            "start": 58.04,
+            "end": 58.26,
+            "probability": 0.9994391798973083
+          },
+          {
+            "word": " you",
+            "start": 58.26,
+            "end": 58.4,
+            "probability": 0.9991717338562012
+          },
+          {
+            "word": " need",
+            "start": 58.4,
+            "end": 58.58,
+            "probability": 0.999738872051239
+          },
+          {
+            "word": " some",
+            "start": 58.58,
+            "end": 58.82,
+            "probability": 0.9983823299407959
+          },
+          {
+            "word": " help",
+            "start": 58.82,
+            "end": 59.22,
+            "probability": 0.999901533126831
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "seek": 5214,
+        "start": 61.24,
+        "end": 65.2,
+        "text": " You know I'm with you, you're beautiful just as yourself",
+        "tokens": [
+          50727,
+          509,
+          458,
+          286,
+          478,
+          365,
+          291,
+          11,
+          291,
+          434,
+          2238,
+          445,
+          382,
+          1803,
+          51026
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.16205711986707605,
+        "compression_ratio": 1.2945736434108528,
+        "no_speech_prob": 3.493382666475142e-12,
+        "words": [
+          {
+            "word": " You",
+            "start": 61.24,
+            "end": 61.78,
+            "probability": 0.9276836514472961
+          },
+          {
+            "word": " know",
+            "start": 61.78,
+            "end": 62.02,
+            "probability": 0.9996862411499023
+          },
+          {
+            "word": " I'm",
+            "start": 62.02,
+            "end": 62.26,
+            "probability": 0.9974659085273743
+          },
+          {
+            "word": " with",
+            "start": 62.26,
+            "end": 62.5,
+            "probability": 0.999904990196228
+          },
+          {
+            "word": " you,",
+            "start": 62.5,
+            "end": 62.7,
+            "probability": 0.7234285473823547
+          },
+          {
+            "word": " you're",
+            "start": 63.18,
+            "end": 63.8,
+            "probability": 0.9949928522109985
+          },
+          {
+            "word": " beautiful",
+            "start": 63.8,
+            "end": 64.22,
+            "probability": 0.9998960494995117
+          },
+          {
+            "word": " just",
+            "start": 64.22,
+            "end": 64.52,
+            "probability": 0.9966057538986206
+          },
+          {
+            "word": " as",
+            "start": 64.52,
+            "end": 64.72,
+            "probability": 0.9957650899887085
+          },
+          {
+            "word": " yourself",
+            "start": 64.72,
+            "end": 65.2,
+            "probability": 0.9969850182533264
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "seek": 5214,
+        "start": 67.27999999999999,
+        "end": 71.38,
+        "text": " To the boys that kiss her, you better fucking treat her well",
+        "tokens": [
+          51026,
+          1407,
+          264,
+          6347,
+          300,
+          7704,
+          720,
+          11,
+          291,
+          1101,
+          5546,
+          2387,
+          720,
+          731,
+          51335
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.16205711986707605,
+        "compression_ratio": 1.2945736434108528,
+        "no_speech_prob": 3.493382666475142e-12,
+        "words": [
+          {
+            "word": " To",
+            "start": 67.27999999999999,
+            "end": 67.82,
+            "probability": 0.975740373134613
+          },
+          {
+            "word": " the",
+            "start": 67.82,
+            "end": 67.94,
+            "probability": 0.9998470544815063
+          },
+          {
+            "word": " boys",
+            "start": 67.94,
+            "end": 68.12,
+            "probability": 0.9904764890670776
+          },
+          {
+            "word": " that",
+            "start": 68.12,
+            "end": 68.3,
+            "probability": 0.9794730544090271
+          },
+          {
+            "word": " kiss",
+            "start": 68.3,
+            "end": 68.48,
+            "probability": 0.9970689415931702
+          },
+          {
+            "word": " her,",
+            "start": 68.48,
+            "end": 68.78,
+            "probability": 0.9998644590377808
+          },
+          {
+            "word": " you",
+            "start": 69.48,
+            "end": 69.78,
+            "probability": 0.9995782971382141
+          },
+          {
+            "word": " better",
+            "start": 69.78,
+            "end": 70.12,
+            "probability": 0.9974209070205688
+          },
+          {
+            "word": " fucking",
+            "start": 70.12,
+            "end": 70.5,
+            "probability": 0.924407422542572
+          },
+          {
+            "word": " treat",
+            "start": 70.5,
+            "end": 70.82,
+            "probability": 0.9993901252746582
+          },
+          {
+            "word": " her",
+            "start": 70.82,
+            "end": 70.98,
+            "probability": 0.9999551773071289
+          },
+          {
+            "word": " well",
+            "start": 70.98,
+            "end": 71.38,
+            "probability": 0.9998055100440979
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "seek": 7138,
+        "start": 73.28,
+        "end": 77.68,
+        "text": " Cause I promised God for her I'd go to hell",
+        "tokens": [
+          50365,
+          10865,
+          286,
+          10768,
+          1265,
+          337,
+          720,
+          286,
+          1116,
+          352,
+          281,
+          4921,
+          50707
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.3020423542369496,
+        "compression_ratio": 1.1046511627906976,
+        "no_speech_prob": 5.0250970919096805e-12,
+        "words": [
+          {
+            "word": " Cause",
+            "start": 73.28,
+            "end": 74.0,
+            "probability": 0.8487105965614319
+          },
+          {
+            "word": " I",
+            "start": 74.0,
+            "end": 74.18,
+            "probability": 0.9980575442314148
+          },
+          {
+            "word": " promised",
+            "start": 74.18,
+            "end": 74.82,
+            "probability": 0.9414070248603821
+          },
+          {
+            "word": " God",
+            "start": 74.82,
+            "end": 75.18,
+            "probability": 0.9636072516441345
+          },
+          {
+            "word": " for",
+            "start": 75.18,
+            "end": 75.52,
+            "probability": 0.9986295700073242
+          },
+          {
+            "word": " her",
+            "start": 75.52,
+            "end": 75.92,
+            "probability": 0.9997814297676086
+          },
+          {
+            "word": " I'd",
+            "start": 75.92,
+            "end": 76.44,
+            "probability": 0.9822148978710175
+          },
+          {
+            "word": " go",
+            "start": 76.44,
+            "end": 76.78,
+            "probability": 0.9998267292976379
+          },
+          {
+            "word": " to",
+            "start": 76.78,
+            "end": 77.1,
+            "probability": 0.9933369159698486
+          },
+          {
+            "word": " hell",
+            "start": 77.1,
+            "end": 77.68,
+            "probability": 0.9974608421325684
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "seek": 7138,
+        "start": 78.5,
+        "end": 81.14,
+        "text": " Don't think I'll ever go home",
+        "tokens": [
+          50707,
+          1468,
+          380,
+          519,
+          286,
+          603,
+          1562,
+          352,
+          1280,
+          50835
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.3020423542369496,
+        "compression_ratio": 1.1046511627906976,
+        "no_speech_prob": 5.0250970919096805e-12,
+        "words": [
+          {
+            "word": " Don't",
+            "start": 78.5,
+            "end": 79.22,
+            "probability": 0.9809659421443939
+          },
+          {
+            "word": " think",
+            "start": 79.22,
+            "end": 79.48,
+            "probability": 0.9997331500053406
+          },
+          {
+            "word": " I'll",
+            "start": 79.48,
+            "end": 79.86,
+            "probability": 0.9977279603481293
+          },
+          {
+            "word": " ever",
+            "start": 79.86,
+            "end": 80.16,
+            "probability": 0.9989996552467346
+          },
+          {
+            "word": " go",
+            "start": 80.16,
+            "end": 80.44,
+            "probability": 0.9986966252326965
+          },
+          {
+            "word": " home",
+            "start": 80.44,
+            "end": 81.14,
+            "probability": 0.9703075885772705
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "seek": 7138,
+        "start": 84.64,
+        "end": 86.86,
+        "text": " I'm not a kid anymore",
+        "tokens": [
+          50835,
+          286,
+          478,
+          406,
+          257,
+          1636,
+          3602,
+          51157
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.3020423542369496,
+        "compression_ratio": 1.1046511627906976,
+        "no_speech_prob": 5.0250970919096805e-12,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 84.64,
+            "end": 85.36,
+            "probability": 0.9642354249954224
+          },
+          {
+            "word": " not",
+            "start": 85.36,
+            "end": 85.6,
+            "probability": 0.694523274898529
+          },
+          {
+            "word": " a",
+            "start": 85.6,
+            "end": 85.84,
+            "probability": 0.9644691348075867
+          },
+          {
+            "word": " kid",
+            "start": 85.84,
+            "end": 86.1,
+            "probability": 0.996489942073822
+          },
+          {
+            "word": " anymore",
+            "start": 86.1,
+            "end": 86.86,
+            "probability": 0.9997013211250305
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "seek": 8686,
+        "start": 90.34,
+        "end": 93.2,
+        "text": " I'm leaving a piece of my soul",
+        "tokens": [
+          50365,
+          286,
+          478,
+          5012,
+          257,
+          2522,
+          295,
+          452,
+          5133,
+          50707
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.33551476218483667,
+        "compression_ratio": 0.9230769230769231,
+        "no_speech_prob": 1.4839459522297815e-11,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 90.34,
+            "end": 91.1,
+            "probability": 0.8907734751701355
+          },
+          {
+            "word": " leaving",
+            "start": 91.1,
+            "end": 91.48,
+            "probability": 0.9842367172241211
+          },
+          {
+            "word": " a",
+            "start": 91.48,
+            "end": 91.88,
+            "probability": 0.7359946966171265
+          },
+          {
+            "word": " piece",
+            "start": 91.88,
+            "end": 92.22,
+            "probability": 0.9660588502883911
+          },
+          {
+            "word": " of",
+            "start": 92.22,
+            "end": 92.38,
+            "probability": 0.9850569367408752
+          },
+          {
+            "word": " my",
+            "start": 92.38,
+            "end": 92.58,
+            "probability": 0.9974616765975952
+          },
+          {
+            "word": " soul",
+            "start": 92.58,
+            "end": 93.2,
+            "probability": 0.9788565635681152
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "seek": 8686,
+        "start": 96.68,
+        "end": 100.16,
+        "text": " Don't think I'll ever go home",
+        "tokens": [
+          50707,
+          1468,
+          380,
+          519,
+          286,
+          603,
+          1562,
+          352,
+          1280,
+          51032
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.33551476218483667,
+        "compression_ratio": 0.9230769230769231,
+        "no_speech_prob": 1.4839459522297815e-11,
+        "words": [
+          {
+            "word": " Don't",
+            "start": 96.68,
+            "end": 97.44,
+            "probability": 0.9635180234909058
+          },
+          {
+            "word": " think",
+            "start": 97.44,
+            "end": 97.66,
+            "probability": 0.9981361627578735
+          },
+          {
+            "word": " I'll",
+            "start": 97.66,
+            "end": 98.0,
+            "probability": 0.9925664961338043
+          },
+          {
+            "word": " ever",
+            "start": 98.0,
+            "end": 98.38,
+            "probability": 0.9948884844779968
+          },
+          {
+            "word": " go",
+            "start": 98.38,
+            "end": 98.64,
+            "probability": 0.9968191385269165
+          },
+          {
+            "word": " home",
+            "start": 98.64,
+            "end": 100.16,
+            "probability": 0.9936495423316956
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "seek": 10016,
+        "start": 102.5,
+        "end": 102.82,
+        "text": " I'm leaving a piece of my soul",
+        "tokens": [
+          50365,
+          286,
+          478,
+          5012,
+          257,
+          2522,
+          295,
+          452,
+          5133,
+          50707
+        ],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 102.5,
+            "end": 102.82,
+            "probability": 0.1272600032389164
+          },
+          {
+            "word": " leaving",
+            "start": 102.82,
+            "end": 102.82,
+            "probability": 0.005240580532699823
+          },
+          {
+            "word": " a",
+            "start": 102.82,
+            "end": 102.82,
+            "probability": 0.016537409275770187
+          },
+          {
+            "word": " piece",
+            "start": 102.82,
+            "end": 102.82,
+            "probability": 0.0006375600351020694
+          },
+          {
+            "word": " of",
+            "start": 102.82,
+            "end": 102.82,
+            "probability": 0.8630513548851013
+          },
+          {
+            "word": " my",
+            "start": 102.82,
+            "end": 102.82,
+            "probability": 0.02138187177479267
+          },
+          {
+            "word": " soul",
+            "start": 102.82,
+            "end": 102.82,
+            "probability": 0.028156640008091927
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "seek": 10016,
+        "start": 102.82,
+        "end": 102.82,
+        "text": "",
+        "tokens": [],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": []
+      },
+      {
+        "id": 19,
+        "seek": 10016,
+        "start": 105.12,
+        "end": 108.68,
+        "text": " When you're my sister, call me when you need some help",
+        "tokens": [
+          50819,
+          1133,
+          291,
+          434,
+          452,
+          4892,
+          11,
+          818,
+          385,
+          562,
+          291,
+          643,
+          512,
+          854,
+          50941
+        ],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": [
+          {
+            "word": " When",
+            "start": 105.12,
+            "end": 105.44,
+            "probability": 0.005911072716116905
+          },
+          {
+            "word": " you're",
+            "start": 105.44,
+            "end": 105.76,
+            "probability": 0.29356855154037476
+          },
+          {
+            "word": " my",
+            "start": 105.76,
+            "end": 105.86,
+            "probability": 0.006126402411609888
+          },
+          {
+            "word": " sister,",
+            "start": 105.86,
+            "end": 106.46,
+            "probability": 0.014134007506072521
+          },
+          {
+            "word": " call",
+            "start": 106.5,
+            "end": 106.5,
+            "probability": 0.00046435670810751617
+          },
+          {
+            "word": " me",
+            "start": 106.5,
+            "end": 108.56,
+            "probability": 0.7861974239349365
+          },
+          {
+            "word": " when",
+            "start": 108.56,
+            "end": 108.68,
+            "probability": 0.003008592640981078
+          },
+          {
+            "word": " you",
+            "start": 108.68,
+            "end": 108.68,
+            "probability": 0.4718095660209656
+          },
+          {
+            "word": " need",
+            "start": 108.68,
+            "end": 108.68,
+            "probability": 0.0077547356486320496
+          },
+          {
+            "word": " some",
+            "start": 108.68,
+            "end": 108.68,
+            "probability": 0.004826309625059366
+          },
+          {
+            "word": " help",
+            "start": 108.68,
+            "end": 108.68,
+            "probability": 0.09132881462574005
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "seek": 10016,
+        "start": 108.68,
+        "end": 108.86,
+        "text": " I'm leaving a piece of my soul",
+        "tokens": [
+          50941,
+          286,
+          478,
+          5012,
+          257,
+          2522,
+          295,
+          452,
+          5133,
+          51035
+        ],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 108.68,
+            "end": 108.76,
+            "probability": 0.24961640685796738
+          },
+          {
+            "word": " leaving",
+            "start": 108.76,
+            "end": 108.76,
+            "probability": 0.40543332695961
+          },
+          {
+            "word": " a",
+            "start": 108.76,
+            "end": 108.86,
+            "probability": 0.5967357158660889
+          },
+          {
+            "word": " piece",
+            "start": 108.86,
+            "end": 108.86,
+            "probability": 0.4068361818790436
+          },
+          {
+            "word": " of",
+            "start": 108.86,
+            "end": 108.86,
+            "probability": 0.9781684279441833
+          },
+          {
+            "word": " my",
+            "start": 108.86,
+            "end": 108.86,
+            "probability": 0.5706971883773804
+          },
+          {
+            "word": " soul",
+            "start": 108.86,
+            "end": 108.86,
+            "probability": 0.2730344533920288
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "seek": 10016,
+        "start": 112.56,
+        "end": 114.88,
+        "text": " I'm leaving a piece of your soul",
+        "tokens": [
+          51035,
+          286,
+          478,
+          5012,
+          257,
+          2522,
+          295,
+          428,
+          5133,
+          51107
+        ],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 112.56,
+            "end": 112.88,
+            "probability": 0.2652609348297119
+          },
+          {
+            "word": " leaving",
+            "start": 112.88,
+            "end": 113.2,
+            "probability": 0.7800451517105103
+          },
+          {
+            "word": " a",
+            "start": 113.2,
+            "end": 114.68,
+            "probability": 0.7379879951477051
+          },
+          {
+            "word": " piece",
+            "start": 114.68,
+            "end": 114.82,
+            "probability": 0.9687532782554626
+          },
+          {
+            "word": " of",
+            "start": 114.82,
+            "end": 114.88,
+            "probability": 0.9894982576370239
+          },
+          {
+            "word": " your",
+            "start": 114.88,
+            "end": 114.88,
+            "probability": 0.03468913957476616
+          },
+          {
+            "word": " soul",
+            "start": 114.88,
+            "end": 114.88,
+            "probability": 0.4543233811855316
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "seek": 10016,
+        "start": 115.88,
+        "end": 116.44,
+        "text": " Don't think I'll ever go home",
+        "tokens": [
+          51107,
+          1468,
+          380,
+          519,
+          286,
+          603,
+          1562,
+          352,
+          1280,
+          51157
+        ],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": [
+          {
+            "word": " Don't",
+            "start": 115.88,
+            "end": 116.2,
+            "probability": 0.5568035207688808
+          },
+          {
+            "word": " think",
+            "start": 116.2,
+            "end": 116.22,
+            "probability": 0.8424898386001587
+          },
+          {
+            "word": " I'll",
+            "start": 116.22,
+            "end": 116.4,
+            "probability": 0.8206259608268738
+          },
+          {
+            "word": " ever",
+            "start": 116.4,
+            "end": 116.42,
+            "probability": 0.8161847591400146
+          },
+          {
+            "word": " go",
+            "start": 116.42,
+            "end": 116.44,
+            "probability": 0.8586485385894775
+          },
+          {
+            "word": " home",
+            "start": 116.44,
+            "end": 116.44,
+            "probability": 0.75235915184021
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "seek": 10016,
+        "start": 116.44,
+        "end": 116.92,
+        "text": " I'm leaving a piece of my soul",
+        "tokens": [
+          51157,
+          286,
+          478,
+          5012,
+          257,
+          2522,
+          295,
+          452,
+          5133,
+          51232
+        ],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": [
+          {
+            "word": " I'm",
+            "start": 116.44,
+            "end": 116.46,
+            "probability": 0.3685748130083084
+          },
+          {
+            "word": " leaving",
+            "start": 116.46,
+            "end": 116.46,
+            "probability": 0.8537819385528564
+          },
+          {
+            "word": " a",
+            "start": 116.46,
+            "end": 116.92,
+            "probability": 0.8788055777549744
+          },
+          {
+            "word": " piece",
+            "start": 116.92,
+            "end": 116.92,
+            "probability": 0.9812365770339966
+          },
+          {
+            "word": " of",
+            "start": 116.92,
+            "end": 116.92,
+            "probability": 0.9943941831588745
+          },
+          {
+            "word": " my",
+            "start": 116.92,
+            "end": 116.92,
+            "probability": 0.7963629961013794
+          },
+          {
+            "word": " soul",
+            "start": 116.92,
+            "end": 116.92,
+            "probability": 0.6468209028244019
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "seek": 10016,
+        "start": 129.64000000000001,
+        "end": 130.08,
+        "text": " Don't think I'll ever go home",
+        "tokens": [
+          51232,
+          1468,
+          380,
+          519,
+          286,
+          603,
+          1562,
+          352,
+          1280,
+          51304
+        ],
+        "temperature": 0.6,
+        "avg_logprob": -0.7781597444380837,
+        "compression_ratio": 2.3076923076923075,
+        "no_speech_prob": 5.6880999910191576e-11,
+        "words": [
+          {
+            "word": " Don't",
+            "start": 129.64000000000001,
+            "end": 129.96,
+            "probability": 0.638555571436882
+          },
+          {
+            "word": " think",
+            "start": 129.96,
+            "end": 129.96,
+            "probability": 0.9419924020767212
+          },
+          {
+            "word": " I'll",
+            "start": 129.96,
+            "end": 129.96,
+            "probability": 0.9212806820869446
+          },
+          {
+            "word": " ever",
+            "start": 129.96,
+            "end": 129.96,
+            "probability": 0.9212371110916138
+          },
+          {
+            "word": " go",
+            "start": 129.96,
+            "end": 129.96,
+            "probability": 0.9356507658958435
+          },
+          {
+            "word": " home",
+            "start": 129.96,
+            "end": 130.08,
+            "probability": 0.9186065196990967
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "seek": 13008,
+        "start": 130.08,
+        "end": 135.9,
+        "text": " Thank you.",
+        "tokens": [
+          50365,
+          1044,
+          291,
+          13,
+          51864
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.5250103076299032,
+        "compression_ratio": 0.5555555555555556,
+        "no_speech_prob": 1.3561445022514107e-10,
+        "words": [
+          {
+            "word": " Thank",
+            "start": 130.08,
+            "end": 131.2,
+            "probability": 0.09962701052427292
+          },
+          {
+            "word": " you.",
+            "start": 131.2,
+            "end": 135.9,
+            "probability": 0.9943742752075195
+          }
+        ]
+      }
+    ],
+    "language": "en"
+  },
+  "summary": null,
+  "study_material": "# Isabel LaRosa - Home (Lyric Video)\n\n## Overview\n**Isabel LaRosa - Home (Lyric Video) Overview**\n\nThis poignant song, \"Home,\" by Isabel LaRosa, is a powerful exploration of the complexities of growing up and leaving one's childhood behind. The lyrics delves into themes of identity, independence, and the struggle to come to terms with the loss of innocence. As we follow the singer's emotional journey, we are reminded that home is not just a physical place, but also a sense of belonging and security.\n\nThe importance of this song lies in its ability to resonate with listeners on a deep level, particularly young people navigating the challenges of adolescence. By confronting the realities of growing up, \"Home\" encourages viewers to reflect on their own relationships, values, and sense of self. This song is essential listening for anyone who has ever felt like they don't quite fit in or are struggling to find their place in the world.\n\nFor students, this song offers a unique opportunity to explore themes of identity, emotional intelligence, and social responsibility. By analyzing the lyrics and accompanying music video, students will learn to: (1) identify and articulate their own emotions and experiences; (2) consider the impact of societal expectations on individual development; and (3) develop empathy for others by understanding the complexities of relationships and community. Through this analysis, students will gain a deeper understanding of themselves and the world around them, cultivating essential life skills for navigating the challenges of adulthood.\n\n## Main Content\n\n### Concept Explanation\n**Concept Explanation: \"Isabel LaRosa - Home (Lyric Video)\"**\n\n**Core Concepts:**\n\n1. **Nostalgia**: A sentimental longing for the past, often triggered by a person, place, or thing that holds fond memories.\n2. **Identity Crisis**: A phase of self-discovery where an individual struggles to define themselves and their place in the world.\n3. **Loss of Innocence**: The realization that one has grown up and can no longer rely on childhood innocence or naivety.\n4. **Emotional Labor**: The act of managing one's emotions, often to maintain social harmony or avoid conflict.\n\n**Relationships between Concepts:**\n\n1. Nostalgia is closely tied to the theme of nostalgia in the song, where the speaker feels a strong sense of longing for their childhood home and the comfort it provided.\n2. Identity Crisis is reflected in the lyrics \"I'm almost twenty, but tell me why I feel so old,\" suggesting that the speaker is struggling to define themselves and their place in the world.\n3. Loss of Innocence is implied through the line \"Don't think I'll ever go home I'm not a kid anymore,\" indicating that the speaker has grown up and can no longer rely on childhood innocence or naivety.\n\n**Step-by-Step Explanation:**\n\n1. The song begins with the speaker expressing nostalgia for their childhood home, which is now empty (line 1).\n2. As they struggle to come to terms with this change, they express a desire for guidance on how to navigate being alone (lines 2-3).\n3. The lyrics \"I'm almost twenty, but tell me why I feel so old\" suggest that the speaker is experiencing an identity crisis and is struggling to define themselves.\n4. The line \"Don't think I'll ever go home\" implies a loss of innocence, as the speaker has grown up and can no longer rely on childhood comfort or security.\n5. The repetition of this phrase throughout the song emphasizes the speaker's sense of disconnection and longing for a lost sense of self.\n\n**Important Principles:**\n\n1. **The Power of Nostalgia**: The song highlights the importance of nostalgia in shaping our understanding of ourselves and our place in the world.\n2. **The Complexity of Emotional Labor**: The lyrics suggest that emotional labor is often necessary to manage social expectations and maintain harmony, but can also lead to feelings of disconnection and isolation.\n3. **The Significance of Self-Discovery**: The song emphasizes the importance of self-discovery and defining oneself as an individual, rather than relying on external sources or societal expectations.\n\n**Additional Insights:**\n\n* The song's lyrics may be interpreted as a reflection of the challenges faced by young adults navigating the transition from adolescence to adulthood.\n* The use of nostalgic imagery and themes suggests that the speaker is grappling with the loss of innocence and the disconnection between their childhood self and adult identity.\n* The repetition of the phrase \"Don't think I'll ever go home\" can be seen as a metaphor for the speaker's struggle to find a sense of belonging or connection in their adult life.\n\n### Examples\nHere are 4 examples that illustrate key concepts, show practical applications, connect to everyday life, and help students understand better for the song \"Isabel LaRosa - Home (Lyric Video)\" :\n\n1. **Illustrating Key Concepts:**\n\nExample: A student is analyzing the lyrics of \"Isabel LaRosa - Home\" in a literature class. To illustrate the concept of \"feeling old\" at almost twenty, they can create a timeline of their own life milestones and mark the years when they felt like they were \"growing up\". They can then discuss how Isabel's feelings of being stuck and leaving her childhood behind are relatable to their own experiences.\n\n2. **Practical Applications:**\n\nExample: A student is working on a creative writing assignment where they need to write a personal reflection about letting go of something or someone. To make it more engaging, they can use the song \"Isabel LaRosa - Home\" as inspiration and create a visual representation of their own process of letting go. They can draw a picture of a house (representing home) with cracks and broken windows, symbolizing the emotional pain of leaving something behind.\n\n3. **Connecting to Everyday Life:**\n\nExample: A student is participating in a school project where they need to discuss how the song \"Isabel LaRosa - Home\" relates to their own life experiences. To make it more relatable, they can share a personal story about a time when they felt like they were leaving something or someone behind (e.g., moving to a new house, losing a loved one, or transitioning to a new school). This can help them connect the song's themes to real-life situations and make the analysis more meaningful.\n\n4. **Helping Students Understand Better:**\n\nExample: A teacher is teaching a lesson on identity formation and self-awareness in psychology class. To help students understand Isabel's feelings of being stuck and trying to find her place, they can create a \"self-portrait\" activity where they draw themselves at different ages (e.g., childhood, adolescence, young adulthood). They can then write a short reflection about how their own identity has changed over time and what they hope to achieve in the future. This can help students see Isabel's struggles as part of a larger process of self-discovery that many people experience.\n\nThese examples demonstrate how the song \"Isabel LaRosa - Home\" can be used to illustrate key concepts, provide practical applications, connect to everyday life, and facilitate deeper understanding among students.\n\n## Key Takeaways\nBased on the lyrics, here are 6-8 essential key takeaways for \"Isabel LaRosa - Home (Lyric Video)\":\n\n1. **Embracing solitude**: The song's protagonist is struggling to accept being alone and move on from a past relationship or situation. They're finding it hard to let go of the past and feel old before their time.\n\n2. **Self-discovery and growth**: The lyrics convey a sense of not being a kid anymore, leaving behind parts of oneself, and moving towards self-discovery and growth.\n\n3. **Protecting loved ones**: The protagonist is concerned about their sister's well-being and wants to ensure she's treated well by others, especially those who kiss her.\n\n4. **Personal responsibility**: The line \"I promised God for her I'd go to hell\" suggests a sense of personal responsibility and accountability towards someone else's well-being.\n\n5. **Moving on from trauma or pain**: The song's theme appears to be about leaving behind painful memories or experiences, allowing the protagonist to heal and move forward.\n\n6. **Support system**: The lyrics emphasize the importance of having a support system, as the protagonist asks their sister to call them when she needs help, indicating that they're not alone in their struggles.\n\n7. **Self-acceptance**: The song's message encourages self-acceptance and self-love, as the protagonist acknowledges their own vulnerability and accepts that it's okay to feel old or overwhelmed.\n\n8. **Resilience and hope**: Despite the challenges and pain expressed in the lyrics, the song ultimately conveys a message of resilience and hope for a better future, with the protagonist finding comfort in knowing they're not alone and have a support system in place.\n\n## Learning Activities\n\n### Practice Exercises\nHere are four to five practice exercises based on the song \"Isabel LaRosa - Home\" with a mix of analytical, problem-solving, reflective, and application tasks:\n\n**Exercise 1: Analytical Task**\n\nRead through the lyrics of the song \"Isabel LaRosa - Home\". Identify and analyze the emotions expressed in the song. How does the artist convey her feelings about leaving home and growing up? What themes are present in the song?\n\nSpecifically, answer the following questions:\n\n* What is the primary emotion expressed in the song?\n* How does the artist use metaphors (e.g., \"I'm leaving a piece of my soul\") to describe her emotions?\n* What message do you think the artist is trying to convey through this song?\n\n**Exercise 2: Problem-Solving Activity**\n\nYou are Isabel, and you're feeling overwhelmed about leaving home. You've been struggling with your relationships with your family and friends, and you're not sure how to navigate these changes.\n\nCreate a plan for yourself that addresses the following challenges:\n\n* How will you maintain relationships with loved ones while establishing independence?\n* What coping mechanisms can you use to deal with feelings of loneliness and homesickness?\n* How will you prioritize self-care and well-being as you transition into adulthood?\n\nWrite down your plan and be prepared to discuss it in a group setting.\n\n**Exercise 3: Reflective Question**\n\nRead the lyrics \"Don't think I'll ever go home / I'm not a kid anymore\" again. What do these lines reveal about Isabel's emotional state? How does she feel about leaving behind the comforts of childhood?\n\nReflect on your own experiences with growing up and transitioning into adulthood. Have you ever felt this way about leaving home or family? How did you cope with these feelings, and what advice would you give to someone in a similar situation?\n\nWrite down your thoughts and insights in a journal entry or a reflective essay.\n\n**Exercise 4: Application Challenge**\n\nImagine you're writing a letter to Isabel from the perspective of an older sibling. Write a message that offers words of encouragement and support as she navigates this difficult time.\n\nConsider the following questions:\n\n* What would be a reassuring message for Isabel to receive?\n* How can you acknowledge her feelings without minimizing them?\n* What specific advice or guidance would you offer?\n\nWrite a letter from your perspective, and then discuss it with a partner or in a small group.\n\n**Exercise 5: Creative Expression**\n\nCreate a visual representation of the song's themes and emotions. This could be a drawing, painting, collage, or any other form of creative expression that resonates with you.\n\nConsider the following questions:\n\n* What colors would you associate with the feelings of longing and homesickness?\n* How can you visually represent the theme of growth and independence?\n* What symbols or metaphors would you use to convey Isabel's emotions?\n\nPresent your visual representation and explain its meaning behind it.\n\n### Quiz Questions\nHere are the quiz questions for \"Isabel LaRosa - Home (Lyric Video)\":\n\n**Multiple Choice Questions**\n\n1. What is the main theme of the song \"Home\"?\nA) Moving away from home\nB) Coming back to a familiar place\nC) Feeling nostalgic for childhood memories\nD) Dealing with relationships and love\n\nAnswer: A) Moving away from home\n\n2. Who does Isabel promise God that she would go to hell for if someone hurts her sister?\nA) Her parents\nB) The boys who kiss her sister\nC) Her friends\nD) No one in particular\n\nAnswer: B) The boys who kiss her sister\n\n3. What is the tone of the song \"Home\"?\nA) Happy and upbeat\nB) Sad and melancholic\nC) Angry and aggressive\nD) Confident and empowering\n\nAnswer: B) Sad and melancholic\n\n4. What does Isabel feel like she is leaving behind when she says \"I'm not a kid anymore I'm leaving a piece of my soul\"?\nA) Her childhood home\nB) Her family\nC) A part of herself\nD) Her youth\n\nAnswer: C) A part of herself\n\n5. Who is the intended recipient of Isabel's message at the end of the song?\nA) Her parents\nB) The boys who kiss her sister\nC) Her sister, and by extension, anyone who needs help\nD) God\n\nAnswer: C) Her sister, and by extension, anyone who needs help\n\n**Short Answer Questions**\n\n1. What does Isabel mean when she says \"I'm almost twenty, but tell me why I feel so old\"? (Answer should be around 50-75 words)\n\n(Answer should include an analysis of how Isabel feels a sense of immaturity despite being close to adulthood, and how this feeling affects her.)\n\n2. How does the song's message relate to themes of female empowerment and protection? (Answer should be around 50-75 words)\n\n(Answer should discuss how the song promotes a strong sense of self-protection and advocacy for oneself and others, particularly women and marginalized groups.)\n\n3. What emotions or feelings do you think Isabel is expressing in this song? Use specific lyrics to support your answer. (Answer should be around 25-50 words)\n\n(Answer should include an analysis of the emotions expressed in the song, such as sadness, anger, and vulnerability, using specific lyrics to support their interpretation.)\n\n**Essay Questions**\n\n1. Analyze the theme of leaving home and growing up in the song \"Home\" by Isabel LaRosa. How does this theme relate to broader societal issues, such as female empowerment and protection?\n\n(Answer should be around 250-500 words)\n\n2. Discuss the role of relationships and love in the song \"Home\". How do these themes intersect with the main theme of leaving home and growing up? Use specific lyrics to support your argument.\n\n(Answer should be around 250-500 words)\n\n---\n*Generated using AI-powered YouTube Summarizer*\n",
+  "job_id": "1bb3a8ac",
+  "timestamp": "2025-11-13T21:41:18.538750",
+  "images_count": 0
+}
